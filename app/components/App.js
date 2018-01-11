@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Header from '../components/Header'
-import Toaster from '../components/Toaster'
-import ScrollTop from '../components/ScrollTop'
 import * as Actions from '../actions'
+import BlueFoot from './BlueFoot/index'
+import SiteFoot from './SiteFoot/index'
 
 const mapStateToProps = state =>{
   return {
@@ -50,13 +50,14 @@ export default class App extends Component {
   }
   
   render() {
-    const { globalVal,actions,auth,location,showmsg } = this.props
+    const { globalVal,actions,auth,location } = this.props
     return (
       <div>
-        <Header styleMode={globalVal.styleMode} auth={auth} logout={actions.logout} location={location} changeStyleMode={actions.changeStyleMode} />
-        {renderRoutes(this.props.route.routes)}
-        <Toaster msg={showmsg} hideMsg={actions.hideMsg} />
-        <ScrollTop />
+        <Header styleMode={globalVal.styleMode} auth={auth} logout={actions.logout} location={location} changeStyleMode={actions.changeStyleMode} />{renderRoutes(this.props.route.routes)}
+        <BlueFoot />
+        <SiteFoot />
+
+
       </div>
     )
   }

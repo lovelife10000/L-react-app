@@ -1,9 +1,9 @@
 import App from '../components/App'
-import Home from '../components/Home'
-import Article from '../components/Article'
-import Login from '../components/Login'
-import Settings from '../components/Settings'
-import MobileApps from '../components/MobileApps'
+import Container from '../components/Container'
+// import Article from '../components/Article'
+import Category from '../components/Category'
+// import Settings from '../components/Settings'
+// import MobileApps from '../components/MobileApps'
 import NotFound from '../components/NotFound'
 
 const routes = [
@@ -11,20 +11,20 @@ const routes = [
     routes: [
       { path: '/',
         exact: true,
-        component: Home
+        component: Container
       },
-      { path: '/login',
-        component: Login
+      { path: '/category',
+        component: Category
       },
-      { path: '/article/:id',
-        component: Article
-      },
-      { path: '/settings',
-        component: Settings
-      },
-      { path: '/apps',
-        component: MobileApps
-      },
+      // { path: '/article/:id',
+      //   component: Article
+      // },
+      // { path: '/settings',
+      //   component: Settings
+      // },
+      // { path: '/apps',
+      //   component: MobileApps
+      // },
       {
         path: '*',
         component: NotFound

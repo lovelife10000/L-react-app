@@ -29,8 +29,10 @@ if (isDev) {
   app.set('view engine', 'ejs')
 }
 
+
+
 app.get('*', function (req, res, next) {
-   debug('what is default',serverRender.default);
+  debug('what is default',serverRender.default);
   serverRender.default(req, res)
 })
 
