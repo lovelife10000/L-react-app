@@ -1,6 +1,6 @@
 import Cookies from 'universal-cookie'
 const cookie = new Cookies()
-import { CookieDomain } from '../config/config'
+import { CookieDomain } from '../config/app.config'
 let cookieConfig = {}
 if(CookieDomain !== ''){
   cookieConfig = { domain: CookieDomain }

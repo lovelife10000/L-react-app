@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
-import banner1 from '../../../assets/images/banner1.jpg'
-import banner2 from '../../../assets/images/banner2.jpg'
-import little1 from '../../../assets/images/little1.gif'
-import little2 from '../../../assets/images/little2.gif'
-import little3 from '../../../assets/images/little3.gif'
+import banner1 from '../../../../assets/images/banner1.jpg'
+import banner2 from '../../../../assets/images/banner2.jpg'
+import little1 from '../../../../assets/images/little1.gif'
+import little2 from '../../../../assets/images/little2.gif'
+import little3 from '../../../../assets/images/little3.gif'
 class Banner extends Component {
   constructor() {
     super()

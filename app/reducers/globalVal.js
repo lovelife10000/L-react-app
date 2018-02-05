@@ -7,7 +7,7 @@ import {
 import { createReducer } from 'redux-immutablejs'
 import { fromJS } from 'immutable'
 import img from '../assets/images/shanghai.jpg'
-import { API_ROOT } from '../config/config'
+import { API_ROOT } from '../config/app.config'
 import { getCookie,saveCookie } from '../utils/authService'
 
 export default createReducer(fromJS({

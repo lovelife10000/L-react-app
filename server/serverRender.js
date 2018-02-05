@@ -6,9 +6,9 @@ import createMemoryHistory from 'history/createMemoryHistory'
 import {Provider} from 'react-redux'
 import Cookies from 'universal-cookie'
 import {fromJS} from 'immutable'
-import configureStore from '../store/configureStore'
-import routes from '../routes/routes'
-import {API_ROOT} from '../config/config'
+import configureStore from '../app/store/configureStore'
+import routes from '../app/config/routes.config'
+import {API_ROOT} from '../app/config/app.config'
 
 async function fetchAllData(batch, dispatch, token) {
   const needs = batch.map(({route, match}, index)=> {

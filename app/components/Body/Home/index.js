@@ -1,9 +1,12 @@
 import React, {Component} from 'react'
-import LeftColumn from '../LeftColumn/index'
-import RightColumn from '../RightColumn/index'
-import * as Actions from '../../actions'
+import Banner from '../Common/Banner'
+import ArticleList from '../Common/ArticleList/index'
 import PropTypes from 'prop-types'
+import ShowWechat from '../Common/ShowWechat'
+import Ads from '../Common/Ads'
+import HotArticles from '../Common/HotArticles'
 import {connect} from 'react-redux'
+import * as Actions from '../../../actions'
 import {bindActionCreators} from 'redux'
 
 const mapStateToProps = (state)=> {
@@ -22,10 +25,12 @@ const mapDispatchToProps = (dispatch)=> {
 @connect(mapStateToProps, mapDispatchToProps)
 
 
-class Container extends Component {
+class LeftColumn extends Component {
   constructor() {
     super()
   }
+
+
 
   static propTypes = {
     actions: PropTypes.object.isRequired,
@@ -43,16 +48,22 @@ class Container extends Component {
   }
 
   render() {
-
-
-    const {articleList}=this.props
+    const {articleList} = this.props
     return (
       <div className="contianer u-clearfix">
-        <LeftColumn articleList={articleList}/>
-        <RightColumn/>
+        <div className="left-column">
+          <Banner/>
+          <ArticleList articleList={articleList}/>
+        </div>
+        <div className="right-column">
+          <ShowWechat/>
+          <Ads/>
+          <HotArticles/>
+        </div>
       </div>
     )
+
   }
 }
 
-export default Container
+export default LeftColumn

@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
-import CateBanner  from './CateBanner'
-import TagPageHeader  from './TagPageHeader'
-import ArticleItem  from '../LeftColumn/ArticleList/ArticleItem'
-import PageNavigation  from './PageNavigation'
-import HotTag from '../RightColumn/HotTag'
-import Ads from '../RightColumn/Ads'
-import HotArticles from '../RightColumn/HotArticles'
+import CateBanner  from '../Common/CateBanner'
+import TagPageHeader  from '../Common/TagPageHeader'
+import ArticleItem  from '../Common/ArticleList/ArticleItem'
+import PageNavigation  from '../Common/PageNavigation'
+import HotTag from '../Common/HotTag'
+import Ads from '../Common/Ads'
+import HotArticles from '../Common/HotArticles'
 
 
 

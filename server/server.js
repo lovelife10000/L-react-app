@@ -1,6 +1,6 @@
 var path = require('path')
 var express = require('express')
-var serverRender = require('./dist/server.js')
+var serverRender = require('../dist/js/server')
 var favicon = require('serve-favicon')
 const debug=require('debug')('express-app');
 
@@ -11,7 +11,7 @@ var port = process.env.PORT || defaultPort
 
 app.use(express.static(path.join(__dirname, 'dist')))
 if (isDev) {
-  var config = require('./webpack/webpack.config.dev.client.js')
+  var config = require('../webpack/webpack.config.dev.client.js')
   var compiler = require('webpack')(config)
   app.use(require('webpack-dev-middleware')(compiler, {
     noInfo: false,
@@ -24,7 +24,7 @@ if (isDev) {
   }))
   app.use(require('webpack-hot-middleware')(compiler))
 }else{
-  app.use(favicon(path.join(__dirname, 'dist', 'favicon.ico')))
+  app.use(favicon(path.join(__dirname, 'dist/img', 'favicon.ico')))
   app.set('views', path.join(__dirname, 'dist'))
   app.set('view engine', 'ejs')
 }
