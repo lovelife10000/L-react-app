@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import logo from '../../assets/images/logo.png'
+import Nav from './Nav'
 
 class Header extends Component {
   constructor() {
@@ -13,25 +14,7 @@ class Header extends Component {
           <a href="/">
             <img className="logo" src={logo}/>
           </a>
-          <div className="header-block">
-            <nav className="header-nav">
-              <ul id="" className="subnav-ul layoutSingleColumn layoutSingleColumn--wide">
-                <li id="" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-home">
-                  <a href="/">首页</a>
-                </li>
-                <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-home">
-                  <a href=""></a>
-                  {/*<ul className="sub-menu">*/}
-
-                  {/*<li id="" className="menu-item menu-item-type-taxonomy menu-item-object-category"*/}
-                  {/*>*/}
-                  {/*<a href=""></a>*/}
-                  {/*</li>*/}
-                  {/*</ul>*/}
-                </li>
-              </ul>
-            </nav>
-          </div>
+          <Nav/>
           <div className="header-block u-floatRight">
             <a className="header-action-item tougao" href="http://www.woshipm.com/#">投稿</a>
             <a href="" className="show-search"><span className="iconfont icon-search"></span></a>
