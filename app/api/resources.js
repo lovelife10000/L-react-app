@@ -48,3 +48,8 @@ export const CommentResource = (method, id, controller, data, api='comment') => 
 export const MobileResource = (method, id, data, api='mobile') => {
   return axios[method](api + (id ? ('/' + id) : ''), data)
 }
+
+export const PartnersResource = (method, id, data, api='partners') => {
+  console.log('这里执行了6')
+  return axios[method](api + (id ? ('/' + id) : ''), data)
+}

@@ -1,4 +1,4 @@
-import {UserResource,AuthResource,ArticleResource,TagResource,MobileResource,CommentResource} from './resources'
+import {UserResource,AuthResource,ArticleResource,TagResource,MobileResource,CommentResource,PartnersResource} from './resources'
 
 export default {
   localLogin: function (data) {
@@ -18,6 +18,10 @@ export default {
   },
   getApps:function () {
     return MobileResource('get','getApps')
+  },
+  getPartners:function () {
+    console.log('这里执行了3')
+    return PartnersResource('get','getPartners')
   },
   //article
   getIndexImage:function () {

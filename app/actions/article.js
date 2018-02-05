@@ -40,8 +40,10 @@ export function toggleLike(aid) {
 
 /*获取文章列表*/
 export const getArticleList = (isAdd = true) =>{
+  console.log('options是什么')
   return (dispatch,getState) => {
     const options = getState().options.toJS()
+    console.log('options是什么1',options)
     return dispatch({
       type: types.ARTICLE_LIST,
       itemsPerPage: options.itemsPerPage,

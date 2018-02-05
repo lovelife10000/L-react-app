@@ -19,6 +19,14 @@ export const getApps = () =>{
     promise: api.getApps()
   }
 }
+
+export const getPartners = () =>{
+  console.log('这里执行了5')
+  return {
+    type: types.GET_PARTNERS,
+    promise: api.getPartners()
+  }
+}
 //首页图片success
 export const getIndexImage = () => {
   return {
