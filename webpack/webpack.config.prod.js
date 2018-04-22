@@ -12,7 +12,7 @@ module.exports = [
     context: path.join(__dirname, '../../'),
     entry: {
       vendor: ['react','redux','react-redux','react-router-redux','react-router-dom','react-router-config'],
-      bundle: './src/client.js'
+      bundle: './client/client.js'
     },
     output: {
       path: path.join(__dirname, '../../resources/assets'),

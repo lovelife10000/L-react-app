@@ -87,7 +87,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm-run-all --sequential build-server:dev start-dev",
     "build-server:dev": "better-npm-run build-dev-server",
-    "start-dev": "better-npm-run nodemon-dev"
+    "build":"npm-run-all clean --parallel build-all:prod",
+    "start-dev": "better-npm-run nodemon-dev",
+    "build-all:prod": "better-npm-run build-prod",
+    "clean": "rimraf dist"
   },
   "betterScripts": {
     "build-dev-server": {
@@ -100,6 +103,12 @@
       "command": "nodemon ./server/server.js",
       "env": {
         "NODE_ENV": "development"
+      }
+    },
+    "build-prod": {
+      "command": "webpack --colors --progress --config ./webpack/webpack.config.prod.js",
+      "env": {
+        "NODE_ENV": "production"
       }
     }
   },
