@@ -13,7 +13,7 @@ module.exports = {
     bundle: ['../client/client.js',hotMiddlewareScript]
   },
   output: {
-    path: path.join(__dirname, '../dist/js'),
+    path: path.join(__dirname, '../dist'),
     filename: '[name].js',
     chunkFilename: '[name].js',
     publicPath: '/'
@@ -35,12 +35,13 @@ module.exports = {
       name: 'vendor',
       minChunks: Infinity //Infinity
     }),    
-    new webpack.HotModuleReplacementPlugin(),
+
     new webpack.NoEmitOnErrorsPlugin(),
     new ExtractTextPlugin({ 
       filename: 'style.css', 
       disable: false, allChunks: true 
-    }),    
+    }),
+      new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [

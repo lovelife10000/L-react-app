@@ -14,10 +14,6 @@ import '../app/assets/styles/viralnova.css'
 import '../app/assets/styles/swiper.css'
 import '../app/assets/styles/ie9.css'
 import '../app/assets/styles/ie8.css'
-// import 'font-awesome/css/font-awesome.css'
-// import 'bootstrap/dist/css/bootstrap.css'
-// import 'jackblog-sass/dist/index.css'
-// import 'react-s-alert/dist/s-alert-default.css'
 import '../app/assets/styles/index.css'
 
 const history = createHistory()

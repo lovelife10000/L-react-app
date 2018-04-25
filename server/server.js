@@ -12,7 +12,7 @@ var port = process.env.PORT || defaultPort
 
 
 if (isDev) {
-    var config = require('../webpack/webpack.config.client.dev.js')
+    var config = require('../webpack/dev-client.js')
     var compiler = require('webpack')(config)
     app.use(require('webpack-dev-middleware')(compiler, {
         noInfo: false,
@@ -34,7 +34,7 @@ app.use(bodyParser.json({limit: '50mb'}));
 
 
 app.get('*', function (req, res, next) {
-    debug('what is default', serverRender.default);
+
     serverRender.default(req, res)
 })
 

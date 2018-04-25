@@ -1,12 +1,13 @@
 const path = require('path')
 const webpack = require('webpack')
+const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true'
 
 module.exports = {
     name: 'server-side rendering',
     context: path.join(__dirname, '../'),
     target: 'node',
     entry: {
-        server: ['babel-polyfill', './server/serverRender.js']
+        server: ['babel-polyfill', './server/serverRender.js',hotMiddlewareScript]
     },
     output: {
         path: path.join(__dirname, '../dist'),
@@ -22,7 +23,8 @@ module.exports = {
                 'NODE_ENV': JSON.stringify('development')
             }
         }),
-        new webpack.IgnorePlugin(/vertx/)
+        new webpack.IgnorePlugin(/vertx/),
+        new webpack.HotModuleReplacementPlugin(),
     ],
     module: {
         rules: [

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm-run-all --sequential build-server:dev start-dev",
-    "build-server:dev": "better-npm-run build-dev-server",
+    "build-server:dev": "better-npm-run build-server:dev",
     "start-dev": "better-npm-run nodemon-dev",
     "build": "npm-run-all clean --parallel build-client:prod build-server:prod",
     "clean": "rimraf dist",
@@ -17,8 +17,8 @@
     "pm2-start":"pm2 start  process.json"
   },
   "betterScripts": {
-    "build-dev-server": {
-      "command": "webpack --colors --progress --config ./webpack/webpack.config.server.dev.js",
+    "build-server:dev": {
+      "command": "webpack --colors --progress --config ./webpack/dev-server.js",
       "env": {
         "NODE_ENV": "development"
       }
@@ -30,13 +30,13 @@
       }
     },
     "build-client:prod": {
-      "command": "webpack --colors --progress --config ./webpack/webpack.config.client.prod.js",
+      "command": "webpack --colors --progress --config ./webpack/prod-client.js",
       "env": {
         "NODE_ENV": "production"
       }
     },
     "build-server:prod": {
-      "command": "webpack --colors --progress --config ./webpack/webpack.config.server.prod.js",
+      "command": "webpack --colors --progress --config ./webpack/prod-server.js",
       "env": {
         "NODE_ENV": "production"
       }
