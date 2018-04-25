@@ -1,6 +1,6 @@
 var path = require('path')
 var express = require('express')
-var serverRender = require('../dist/server')
+var serverRender = require('../dist/serverRender')
 var favicon = require('serve-favicon')
 const debug=require('debug')('express-app');
 const bodyParser = require('body-parser');
