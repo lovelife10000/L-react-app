@@ -16,7 +16,7 @@ module.exports = [
         },
         output: {
             path: path.join(__dirname, '../dist/'),
-            filename: 'server.js',
+            filename: 'serverRender.js',
             publicPath: '/',
             libraryTarget: 'commonjs2'
         },

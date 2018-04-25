@@ -10,9 +10,9 @@ var isDev = process.env.NODE_ENV === 'development'
 var defaultPort = isDev? 3002 : 3002
 var port = process.env.PORT || defaultPort
 
-app.use(express.static(path.join(__dirname, 'dist')))
+
 if (isDev) {
-  var config = require('../webpack/webpack.config.dev.client.js')
+  var config = require('../webpack/webpack.config.client.dev.js')
   var compiler = require('webpack')(config)
   app.use(require('webpack-dev-middleware')(compiler, {
     noInfo: false,
@@ -29,6 +29,7 @@ if (isDev) {
   app.set('views', path.join(__dirname, '..','dist'))
   app.set('view engine', 'ejs')
 }
+app.use(express.static(path.join(__dirname, '..', 'dist')))
 app.use(bodyParser.json({limit: '50mb'}));
 
 

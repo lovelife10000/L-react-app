@@ -5,35 +5,36 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-
     "dev": "npm-run-all --sequential build-server:dev start-dev",
     "build-server:dev": "better-npm-run build-dev-server",
     "start-dev": "better-npm-run nodemon-dev",
-
-    "build": "npm-run-all clean --parallel build-all:prod",
+    "build": "npm-run-all clean --parallel build-client:prod build-server:prod",
     "clean": "rimraf dist",
-    "build-all:prod": "better-npm-run build-prod"
-
+    "build-client:prod": "better-npm-run build-client:prod",
+    "build-server:prod": "better-npm-run build-server:prod",
+    "start-prod":"node ./server/server.js"
   },
-
-
   "betterScripts": {
     "build-dev-server": {
-      "command": "webpack --colors --progress --config ./webpack/webpack.config.dev.server.js",
+      "command": "webpack --colors --progress --config ./webpack/webpack.config.server.dev.js",
       "env": {
         "NODE_ENV": "development"
       }
     },
-
     "nodemon-dev": {
       "command": "nodemon ./server/server.js",
       "env": {
         "NODE_ENV": "development"
       }
     },
-
-    "build-prod": {
-      "command": "webpack --colors --progress --config ./webpack/webpack.config.prod.js",
+    "build-client:prod": {
+      "command": "webpack --colors --progress --config ./webpack/webpack.config.client.prod.js",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "build-server:prod": {
+      "command": "webpack --colors --progress --config ./webpack/webpack.config.server.prod.js",
       "env": {
         "NODE_ENV": "production"
       }
@@ -122,10 +123,6 @@
     "webpack-dev-middleware": "1.12.0",
     "webpack-hot-middleware": "2.19.1"
   },
-
-
-
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lovelife10000/L-react-app.git"
