@@ -88,9 +88,9 @@ function renderFullPage(renderedContent, initialState, styleMode) {
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="renderer" content="webkit">
-      <title>Jackblog react版</title>
-      <meta name="description" content="This is Jack Hu's blog. use react redux.">
-      <meta name="keyword" content="Jackblog react redux react-router react-redux-router react-bootstrap react-alert">
+      <title>L-react-app</title>
+      <meta name="description" content="">
+      <meta name="keyword" content="">
       <link rel="stylesheet" href="/style.css"/>
     </head>
     <body class="${styleMode}">
@@ -101,27 +101,10 @@ function renderFullPage(renderedContent, initialState, styleMode) {
       <script>
         window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}
       </script>
-      <script type="text/javascript" charset="utf-8" src="/vendor.js"></script>
-      <script type="text/javascript" charset="utf-8" src="/bundle.js"></script>
-      <script src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.min.js"></script>
-      <script>
-      var swiper = new Swiper('.swiper-container', {
+      <script type="text/jsx" charset="utf-8" src="/vendor.js"></script>
+      <script type="text/jsx" charset="utf-8" src="/bundle.js"></script>
 
-        pagination: '.swiper-pagination',
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        //autoplay: 5000,//可选选项，自动滑动
-        paginationClickable: true,
-
-
-        longSwipesRatio: 0.3,
-        touchRatio:1,
-        loop: true,
-        observer:true,//修改swiper自己或子元素时，自动初始化swiper
-        observeParents:true,//修改swiper的父元素时，自动初始化swiper
   
-      });
-    </script>
     </body>
   </html>
   `

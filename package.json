@@ -12,7 +12,9 @@
     "clean": "rimraf dist",
     "build-client:prod": "better-npm-run build-client:prod",
     "build-server:prod": "better-npm-run build-server:prod",
-    "start-prod":"node ./server/server.js"
+    "start-prod": "node ./server/server.js",
+    "start-prod-watch": "better-npm-run nodemon-dev",
+    "pm2-start":"pm2 start  process.json"
   },
   "betterScripts": {
     "build-dev-server": {
@@ -35,6 +37,12 @@
     },
     "build-server:prod": {
       "command": "webpack --colors --progress --config ./webpack/webpack.config.server.prod.js",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "nodemon-prod": {
+      "command": "nodemon ./server/server.js",
       "env": {
         "NODE_ENV": "production"
       }
