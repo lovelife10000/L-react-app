@@ -1,13 +1,13 @@
 const path = require('path')
 const webpack = require('webpack')
-const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true'
+// const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true'
 
 module.exports = {
     name: 'server-side rendering',
     context: path.join(__dirname, '../'),
     target: 'node',
     entry: {
-        server: ['babel-polyfill', './server/serverRender.js',hotMiddlewareScript]
+        server: ['babel-polyfill', './server/serverRender.js']
     },
     output: {
         path: path.join(__dirname, '../dist'),

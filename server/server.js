@@ -1,9 +1,10 @@
 var path = require('path')
 var express = require('express')
-var serverRender = require('../dist/serverRender')
+
 var favicon = require('serve-favicon')
 const debug = require('debug')('express-app');
 const bodyParser = require('body-parser');
+
 
 var app = express()
 var isDev = process.env.NODE_ENV === 'development'
@@ -24,18 +25,24 @@ if (isDev) {
         }
     }))
     app.use(require('webpack-hot-middleware')(compiler))
-} else {
-    app.use(favicon(path.join(__dirname, '..', 'dist', 'favicon.ico')))
+
+    app.set('view engine', 'ejs')//开发模式时，采用ejs模版引擎的文件作为响应
     app.set('views', path.join(__dirname, '..', 'dist'))
-    app.set('view engine', 'ejs')
+    app.use(favicon(path.join(__dirname, '..', 'dist', 'favicon.ico')))
 }
 app.use(express.static(path.join(__dirname, '..', 'dist')))
 app.use(bodyParser.json({limit: '50mb'}));
 
 
 app.get('*', function (req, res, next) {
+    if(isDev){
+        res.render('../dist/index');
+    }else {
+        var serverRender = require('../dist/serverRender')
+        serverRender.default(req, res)
+    }
 
-    serverRender.default(req, res)
+
 })
 
 app.listen(port, function (err) {

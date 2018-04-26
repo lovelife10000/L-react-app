@@ -24,8 +24,8 @@ async function fetchAllData(batch, dispatch, token) {
   return await Promise.all(needs)
 }
 
-export default function render(req, res) {
-  console.log('这里执行了2')
+export default function serverRender(req, res) {
+
   const cookies = new Cookies(req.headers.cookie)
   const history = createMemoryHistory()
   const token = cookies.get('token') || null

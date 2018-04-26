@@ -16,9 +16,9 @@ class Header extends Component {
           </a>
           <Nav/>
           <div className="header-block u-floatRight">
-            <a className="header-action-item tougao" href="http://www.woshipm.com/#">投稿3</a>
+            <a className="header-action-item tougao" href="http://www.woshipm.com/#">投稿2</a>
             <a href="" className="show-search"><span className="iconfont icon-search"></span></a>
-            <a className="header-action-item" href="">注册/登录</a>
+            <a className="header-action-item" href="">注册/登录1</a>
             <a href="" className="message--link u-marginRight10">
               <span className="svgIcon svgIcon--bell svgIcon--25px">
                 <svg className="svgIcon-use" width="25" height="25" viewBox="-293 409 25 25">
