@@ -8,12 +8,9 @@ import createHistory from 'history/createBrowserHistory'
 import configureStore from '../app/store/configureStore'
 import createDevTools from './createDevtools'
 import routes from '../app/config/routes.config'
-import '../app/assets/styles/app.css'
-import '../app/assets/styles/misc.css'
-import '../app/assets/styles/viralnova.css'
-import '../app/assets/styles/swiper.css'
-import '../app/assets/styles/ie9.css'
-import '../app/assets/styles/ie8.css'
+
+
+
 import '../app/assets/styles/index.css'
 
 const history = createHistory()
