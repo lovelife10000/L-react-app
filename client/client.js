@@ -11,7 +11,8 @@ import routes from '../app/config/routes.config'
 
 
 
-import '../app/assets/styles/index.css'
+import '../app/assets/styles/reset.css'
+import '../app/assets/styles/base.less'
 
 const history = createHistory()
 const initialState = window.__INITIAL_STATE__
