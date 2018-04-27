@@ -1,4 +1,4 @@
-import * as types from './types'
+import types from 'actions/types'
 import api from 'api'
 import {getUserInfo} from './auth'
 
@@ -41,7 +41,7 @@ export function toggleLike(aid) {
 /*获取文章列表*/
 export const getArticleList = (isAdd = true) => {
     return {
-        type: 'GETARTICLELIST',
+        type:types.getArticleList,
         promise: api.getArticleList()
     }
 
@@ -50,7 +50,7 @@ export const getArticleList = (isAdd = true) => {
 //下拉载入文章数据
 export const addArticleList = (num) => {
     return {
-        type: 'ADDARTICLELIST',
+        type: type.addArticleList,
         promise: api.addArticleList(num)
     }
 }

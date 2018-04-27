@@ -71,7 +71,11 @@ module.exports = {
                             ignoreOrder: true
                         }
                     }, {
-                        loader: "less-loader"
+                        loader: "less-loader",
+                        options: {
+                            strictMath: true,
+                            noIeCompat: true
+                        }
                     }]
 
                 })

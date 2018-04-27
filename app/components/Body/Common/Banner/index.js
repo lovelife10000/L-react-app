@@ -48,8 +48,8 @@ class Banner extends Component {
                     {
                         bannerData.map((item,index)=>(
                             <li key={index}>
-                                <img src={item.srcUrl} alt=""/>
-                                <a href={item.url}>{item.url}</a></li>
+
+                                <a href={item.url}>{item.url}<img src={item.srcUrl} alt=""/></a></li>
                         ))
                     }
 

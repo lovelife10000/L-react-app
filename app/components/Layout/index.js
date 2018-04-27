@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {renderRoutes} from 'react-router-config'
 import PropTypes from 'prop-types'
 import * as Actions from '../../actions'
-import BlueFoot from '../BlueFoot/index'
+
 import SiteFoot from '../Footer'
 import Header from '../Header'
 import {bindActionCreators} from 'redux'
@@ -53,7 +53,7 @@ class App extends Component {
         <a href="">{partners.length}</a>
 
         {renderRoutes(this.props.route.routes)}
-        <BlueFoot partners={partners} />
+
         <SiteFoot />
 
 

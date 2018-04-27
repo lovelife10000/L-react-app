@@ -76,29 +76,34 @@ class ArticleList extends Component {
             <div>
                 <Tabs defaultActiveKey="1" onChange={this.callback}>
                     <TabPane tab="文章" key="1">
-                        <article className={styles.articleWrap}>
-                            <a className={styles.articleImg}><img src={z} alt=""/></a>
-                            <div className={styles.articlePanel}>
-                                <a className={styles.title} href="">文章标题</a>
-                                <p>文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览</p>
+                        {
+                            articleList.map((item,index)=>(
+                                <article key={index} className={styles.articleWrap}>
+                                    <a className={styles.articleImg}><img src={item.img} alt=""/></a>
+                                    <div className={styles.articlePanel}>
+                                        <a className={styles.title} href="">{item.title}</a>
+                                        <p>{item.abstract}</p>
 
-                                <div className={styles.soMuch}>
-                                    <ul className={styles.authorWrap}>
-                                        <li><a href=""><img src={z} alt=""/></a></li>
-                                        <li><a href="">用户名</a></li>
-                                        <li>日期</li>
-                                    </ul>
-                                    <ul className={styles.count}>
-                                        <li>点击</li>
-                                        <li>点击</li>
-                                        <li>点击</li>
-                                    </ul>
+                                        <div className={styles.soMuch}>
+                                            <ul className={styles.authorWrap}>
+                                                <li><a href=""><img src={item.avatar} alt=""/></a></li>
+                                                <li><a href="">{item.author}</a></li>
+                                                <li>日期</li>
+                                            </ul>
+                                            <ul className={styles.count}>
+                                                <li>点击</li>
+                                                <li>点击</li>
+                                                <li>点击</li>
+                                            </ul>
 
-                                </div>
+                                        </div>
 
-                            </div>
+                                    </div>
 
-                        </article>
+                                </article>
+                            ))
+                        }
+
                         <div ref="tag"></div>
                     </TabPane>
 
