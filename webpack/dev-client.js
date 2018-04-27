@@ -135,7 +135,7 @@ module.exports = {
       extensions: ['.js','.jsx','.sass','.css','.png'],
       alias: {
         images: path.resolve(__dirname, '../app/assets/images'),
-        // actions: path.resolve(__dirname, '../../app/actions'),
+        actions: path.resolve(__dirname, '../app/actions'),
         // reducers: path.resolve(__dirname, '../../app/reducers'),
         // api: path.resolve(__dirname, '../../app/api'),
         // assets: path.resolve(__dirname, '../../resources/assets'),

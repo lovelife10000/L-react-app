@@ -11,6 +11,7 @@ import sns from './sns'
 import showmsg from './showmsg'
 import globalVal from './globalVal'
 import partners from './partners'
+import bannerData from './bannerData'
 
 const rootReducer = combineReducers({
   globalVal,
@@ -26,7 +27,8 @@ const rootReducer = combineReducers({
   showmsg,
   router: routerReducer,
   form: formReducer,
-  partners
+  partners,
+    bannerData
 })
 
 export default rootReducer

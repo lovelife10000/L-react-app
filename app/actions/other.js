@@ -20,6 +20,14 @@ export const getApps = () =>{
   }
 }
 
+
+export const getBannerData=()=>{
+  return{
+    type:'GET_BANNER_DATA',
+      promise:api.getBannerData()
+  }
+}
+
 export const getPartners = () =>{
   console.log('这里执行了5')
   return {

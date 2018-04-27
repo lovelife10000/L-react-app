@@ -1,4 +1,4 @@
-import {UserResource,AuthResource,ArticleResource,TagResource,MobileResource,CommentResource,PartnersResource} from './resources'
+import {UserResource,AuthResource,ArticleResource,TagResource,MobileResource,CommentResource,PartnersResource,BannerResource} from './resources'
 
 export default {
   localLogin: function (data) {
@@ -54,5 +54,9 @@ export default {
   },
   delReply: function (id,data) {
     return CommentResource('delete', id, 'delReply', data)
+  },
+
+  getBannerData:function () {
+      return BannerResource('get')
   }
 }

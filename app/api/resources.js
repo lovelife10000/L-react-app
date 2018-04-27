@@ -53,3 +53,7 @@ export const PartnersResource = (method, id, data, api='partners') => {
   console.log('这里执行了6')
   return axios[method](api + (id ? ('/' + id) : ''), data)
 }
+
+export const BannerResource=(method, id, data, api='banner')=>{
+    return axios[method](api + (id ? ('/' + id) : ''), data)
+}
