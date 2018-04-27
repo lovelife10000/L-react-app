@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
-import ReactSwipe from 'react-swipe';
+import Slider  from 'react-slick';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as Actions from 'actions';
+import styles from './index.less'
 
 const mapStateToProps = (state) => {
     return {
-        bannerData:state.bannerData.toJS()
+        bannerData: state.bannerData.toJS()
     }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -16,13 +17,14 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 class Banner extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
     }
 
     componentDidMount() {
-        debugger;
+
         this.getBannerData();
+
     }
 
     getBannerData() {
@@ -32,19 +34,26 @@ class Banner extends Component {
 
     render() {
         const {bannerData} = this.props;
+        const settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        }
         return (
 
             <div>
-                <ReactSwipe className="swiper-wrap" swipeOptions={{continuous: false}}>
+                <Slider  className={styles.swiperWrap}  {...settings} >
                     {
-                        bannerData.map(function (item, index) {
-                            <div key={index} className="swiper-item"><a href={item.data.url}><img src={item.data.srcUrl}
-                                                                                                  alt=""/></a></div>
-                        })
+                        bannerData.map((item,index)=>(
+                            <li key={index}>
+                                <img src={item.srcUrl} alt=""/>
+                                <a href={item.url}>{item.url}</a></li>
+                        ))
                     }
 
-
-                </ReactSwipe>
+                </Slider >
             </div>
         )
     }

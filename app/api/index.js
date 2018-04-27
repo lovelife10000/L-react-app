@@ -27,9 +27,17 @@ export default {
   getIndexImage:function () {
     return ArticleResource('get', 'getIndexImage')
   },
+
+
   getArticleList:function (options) {
-    return ArticleResource('get', 'getFrontArticleList', null, {params:options})
+    return ArticleResource('get', null, null, {params:options})
   },
+    addArticleList:(num)=>{
+    ArticleResource('get',null,null,{params:num})
+    },
+
+
+
   getArticleDetaile:function (id) {
     return ArticleResource('get', id, 'getFrontArticle')
   },
@@ -58,5 +66,7 @@ export default {
 
   getBannerData:function () {
       return BannerResource('get')
-  }
+  },
+
+
 }

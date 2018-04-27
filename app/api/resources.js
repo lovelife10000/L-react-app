@@ -1,9 +1,9 @@
 require('es6-promise').polyfill()
 import axios from 'axios'
-import { API_ROOT } from '../config/app.config'
+import { devDomain,prodDomain } from '../config/app.config'
 import { getCookie,signOut } from '../utils/authService'
-
-axios.defaults.baseURL = API_ROOT
+const isDev=process.env.NODE_ENV === 'development';
+axios.defaults.baseURL = isDev ? devDomain :prodDomain;
 axios.defaults.withCredentials = true
 
 // Add a request interceptor

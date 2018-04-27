@@ -1,0 +1,70 @@
+.articleWrap {
+  padding: 20px;
+  display: flex;
+  background: #00a854;
+  height: 200px;
+  .articleImg {
+
+
+    background: grey;
+    img{
+      display: block;
+      width: 215px;
+      height: 140px;
+    }
+
+  }
+  .articlePanel {
+    width: 100%;
+    margin-right: auto;
+    margin-left: 15px;
+    .title {
+      padding-top: 20px;
+      font-size: 20px;
+
+
+
+    }
+    p {
+      margin:20px 0;
+      overflow: hidden;
+
+      text-overflow: ellipsis;
+      width:100%;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+
+    }
+
+    .soMuch{
+      display: flex;
+
+      .authorWrap {
+
+display: flex;
+        align-items: center;
+        li {
+margin-right: 15px;
+          a {
+            img {
+              width: 32px;
+              height: 32px;
+              border-radius:50% ;
+            }
+
+          }
+        }
+      }
+
+      .count {
+      margin-left: auto;
+
+        li{
+          display: inline-block;
+        }
+      }
+    }
+
+  }
+}

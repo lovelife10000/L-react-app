@@ -98,3 +98,10 @@ hr {
 input, select {
   vertical-align: middle;
 }
+*{
+  box-sizing: border-box;
+}
+
+li{
+  list-style: none;
+}

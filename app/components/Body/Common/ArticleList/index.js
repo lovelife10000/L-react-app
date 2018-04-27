@@ -1,27 +1,113 @@
 import React, {Component} from 'react'
-import ArticleItem from './ArticleItem'
-import LoadMore from './LoadMore'
+import {findDomNode} from 'react-dom'
+import styles from './index.less'
 import PropTypes from 'prop-types'
+import {Tabs} from 'antd';
+import z from 'images/avatar.png'
 
+
+import {connect} from 'react-redux'
+import * as Actions from 'actions'
+import {bindActionCreators} from 'redux'
+
+const TabPane = Tabs.TabPane;
+
+const mapStateToProps = (state) => {
+    return {
+        articleList: state.articleList.toJS()
+    }
+};
+
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        actions: bindActionCreators(Actions, dispatch)
+    }
+};
 
 class ArticleList extends Component {
-  constructor() {
-    super()
-  }
+    constructor(props) {
+        super(props)
+    }
 
-  static propTypes = {
-    articleList: PropTypes.array.isRequired
-  };
+    static propTypes = {
+        articleList: PropTypes.array.isRequired
+    };
 
-  render() {
-    const {articleList}=this.props
-    return (
-      <section className="bigfa-ajax-wrapper">
-        <ArticleItem articleList={articleList}/>
-        <LoadMore />
-      </section>
-    )
-  }
+    componentDidMount() {
+        const {actions} = this.props
+        this.getArticleList()
+        window.addEventListener('scroll', this.orderScroll.bind(this));
+    }
+
+    getArticleList() {
+        const {actions} = this.props;
+        actions.getArticleList();
+
+
+    }
+    addArticleList(){
+        const {actions}=this.props
+        actions.addArticleList(10);
+    }
+
+
+    orderScroll() {
+        console.log('滚动条滚动了');
+        const dom = this.refs.tag
+
+        const y1 = dom.getBoundingClientRect().top
+
+        const y2 = window.innerHeight;
+        if (y1 < y2) {
+            const {actions} = this.props;
+            actions.addArticleList();
+        }
+
+    }
+
+    callback(key) {
+        console.log(key);
+    }
+
+    render() {
+        const {articleList} = this.props
+        return (
+            <div>
+                <Tabs defaultActiveKey="1" onChange={this.callback}>
+                    <TabPane tab="文章" key="1">
+                        <article className={styles.articleWrap}>
+                            <a className={styles.articleImg}><img src={z} alt=""/></a>
+                            <div className={styles.articlePanel}>
+                                <a className={styles.title} href="">文章标题</a>
+                                <p>文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览文章预览</p>
+
+                                <div className={styles.soMuch}>
+                                    <ul className={styles.authorWrap}>
+                                        <li><a href=""><img src={z} alt=""/></a></li>
+                                        <li><a href="">用户名</a></li>
+                                        <li>日期</li>
+                                    </ul>
+                                    <ul className={styles.count}>
+                                        <li>点击</li>
+                                        <li>点击</li>
+                                        <li>点击</li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+                        <div ref="tag"></div>
+                    </TabPane>
+
+                </Tabs>
+
+            </div>
+
+        )
+    }
 }
 
-export default ArticleList
+export default connect(mapStateToProps, mapDispatchToProps)(ArticleList)

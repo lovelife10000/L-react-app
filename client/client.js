@@ -10,7 +10,8 @@ import createDevTools from './createDevtools'
 import routes from '../app/config/routes.config'
 
 
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import '../app/assets/styles/reset.css'
 import '../app/assets/styles/base.less'
 

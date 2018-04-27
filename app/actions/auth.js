@@ -2,7 +2,7 @@ import * as types from './types'
 import { push } from 'react-router-redux'
 import { saveCookie,getCookie,signOut } from '../utils/authService'
 import { showMsg } from './other'
-import api from '../api'
+import api from 'api'
 import { API_ROOT } from '../config/app.config'
 
 //获取snslogins

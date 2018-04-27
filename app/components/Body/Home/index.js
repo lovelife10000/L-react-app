@@ -6,8 +6,9 @@ import ShowWechat from '../Common/ShowWechat'
 import Ads from '../Common/Ads'
 import HotArticles from '../Common/HotArticles'
 import {connect} from 'react-redux'
-import * as Actions from '../../../actions'
+import * as Actions from 'actions'
 import {bindActionCreators} from 'redux'
+import styles from './index.less'
 
 const mapStateToProps = (state)=> {
   return {
@@ -50,17 +51,23 @@ class LeftColumn extends Component {
   render() {
     const {articleList} = this.props
     return (
-      <div className="contianer u-clearfix">
-        <div className="left-column">
-          <Banner/>
+        <div>
+        <div className={styles.subHead}>
+            <Banner/>
+        </div>
+      <div className={styles.body}>
+
+        <div className={styles.leftColumn}>
+
           <ArticleList articleList={articleList}/>
         </div>
-        <div className="right-column">
+        <div className={styles.rightColumn}>
           <ShowWechat/>
           <Ads/>
           <HotArticles/>
         </div>
       </div>
+        </div>
     )
 
   }

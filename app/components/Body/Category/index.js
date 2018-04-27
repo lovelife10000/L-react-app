@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import CateBanner  from '../Common/CateBanner'
 import TagPageHeader  from '../Common/TagPageHeader'
-import ArticleItem  from '../Common/ArticleList/ArticleItem'
+
 import PageNavigation  from '../Common/PageNavigation'
 import HotTag from '../Common/HotTag'
 import Ads from '../Common/Ads'
@@ -26,7 +26,7 @@ class Category extends Component {
         <CateBanner />
         <div className="left-column">
           <TagPageHeader />
-          <ArticleItem/>
+
           <PageNavigation />
         </div>
         <div className="right-column">
