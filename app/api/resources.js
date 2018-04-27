@@ -57,3 +57,7 @@ export const PartnersResource = (method, id, data, api='partners') => {
 export const BannerResource=(method, id, data, api='banner')=>{
     return axios[method](api + (id ? ('/' + id) : ''), data)
 }
+
+export const RecommendResource=(method, id, data, api='recommend')=>{
+    return axios[method](api + (id ? ('/' + id) : ''), data)
+}

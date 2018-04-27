@@ -1,4 +1,4 @@
-import * as types from './types'
+import  types from 'actions/types'
 import api from 'api'
 
 //改变样式风格.
@@ -28,11 +28,11 @@ export const getBannerData=()=>{
   }
 }
 
-export const getPartners = () =>{
-  console.log('这里执行了5')
+export const getRecommendData = () =>{
+
   return {
-    type: types.GET_PARTNERS,
-    promise: api.getPartners()
+    type: types.getRecommendData,
+    promise: api.getRecommendData()
   }
 }
 //首页图片success

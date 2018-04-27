@@ -14,7 +14,7 @@ class Header extends Component {
             [styles.header]: true
         });
         return (
-            <div>
+
                 <div className={cls}>
                     <div className={styles.headerInner}>
                         <div className={styles.logo}>
@@ -27,7 +27,7 @@ class Header extends Component {
 
                 </div>
 
-            </div>
+
 
         )
     }

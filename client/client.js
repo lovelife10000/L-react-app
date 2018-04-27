@@ -9,7 +9,7 @@ import configureStore from '../app/store/configureStore'
 import createDevTools from './createDevtools'
 import routes from '../app/config/routes.config'
 
-
+import 'antd/dist/antd.less'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../app/assets/styles/reset.css'

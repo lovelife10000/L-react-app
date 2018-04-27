@@ -9,68 +9,70 @@ import {connect} from 'react-redux'
 import * as Actions from 'actions'
 import {bindActionCreators} from 'redux'
 import styles from './index.less'
+import Recommend from '../Common/Recommend'
 
-const mapStateToProps = (state)=> {
-  return {
-    articleList: state.articleList.toJS()
-  }
+const mapStateToProps = (state) => {
+    return {
+        articleList: state.articleList.toJS()
+    }
 };
 
 
-const mapDispatchToProps = (dispatch)=> {
-  return {
-    actions: bindActionCreators(Actions, dispatch)
-  }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        actions: bindActionCreators(Actions, dispatch)
+    }
 };
 
 @connect(mapStateToProps, mapDispatchToProps)
 
 
 class LeftColumn extends Component {
-  constructor() {
-    super()
-  }
-
-
-
-  static propTypes = {
-    actions: PropTypes.object.isRequired,
-    articleList: PropTypes.array.isRequired
-  };
-
-  static fetchData() {
-    return [Actions.getArticleList()]
-  }
-  componentDidMount() {
-    const {actions, articleList} = this.props
-    if (articleList.length < 1) {
-      actions.getArticleList()
+    constructor() {
+        super()
     }
-  }
 
-  render() {
-    const {articleList} = this.props
-    return (
-        <div>
-        <div className={styles.subHead}>
-            <Banner/>
-        </div>
-      <div className={styles.body}>
 
-        <div className={styles.leftColumn}>
+    static propTypes = {
+        actions: PropTypes.object.isRequired,
+        articleList: PropTypes.array.isRequired
+    };
 
-          <ArticleList articleList={articleList}/>
-        </div>
-        <div className={styles.rightColumn}>
-          <ShowWechat/>
-          <Ads/>
-          <HotArticles/>
-        </div>
-      </div>
-        </div>
-    )
+    static fetchData() {
+        return [Actions.getArticleList()]
+    }
 
-  }
+    componentDidMount() {
+        const {actions, articleList} = this.props
+        if (articleList.length < 1) {
+            actions.getArticleList()
+        }
+    }
+
+    render() {
+        const {articleList} = this.props
+        return (
+            <div className={styles.container}>
+                <div className={styles.subHead}>
+                    <Banner/>
+                    <Recommend/>
+                </div>
+                <div className={styles.body}>
+
+                    <div className={styles.leftColumn}>
+
+                        <ArticleList articleList={articleList}/>
+                    </div>
+                    <div className={styles.rightColumn}>
+                        <ShowWechat/>
+                        <Ads/>
+                        <HotArticles/>
+                    </div>
+                </div>
+            </div>
+        )
+
+    }
 }
 
 export default LeftColumn

@@ -43,18 +43,19 @@ class Banner extends Component {
         }
         return (
 
-            <div>
+
                 <Slider  className={styles.swiperWrap}  {...settings} >
                     {
                         bannerData.map((item,index)=>(
                             <li key={index}>
 
-                                <a href={item.url}>{item.url}<img src={item.srcUrl} alt=""/></a></li>
+                                <a href={item.url}>
+                                    <h3>这是文章标题</h3><img src={item.srcUrl} alt=""/></a></li>
                         ))
                     }
 
                 </Slider >
-            </div>
+
         )
     }
 }

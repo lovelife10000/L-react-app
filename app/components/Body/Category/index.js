@@ -22,7 +22,7 @@ class Category extends Component {
 
 
     return (
-      <div className="contianer u-clearfix">
+      <div className="">
         <CateBanner />
         <div className="left-column">
           <TagPageHeader />

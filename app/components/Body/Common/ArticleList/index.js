@@ -104,11 +104,43 @@ class ArticleList extends Component {
                             ))
                         }
 
-                        <div ref="tag"></div>
+
                     </TabPane>
 
-                </Tabs>
+                    <TabPane tab="Tab 2" key="2">
 
+                        {
+                            articleList.map((item,index)=>(
+                                <article key={index} className={styles.articleWrap}>
+                                    <a className={styles.articleImg}><img src={item.img} alt=""/></a>
+                                    <div className={styles.articlePanel}>
+                                        <a className={styles.title} href="">{item.title}</a>
+                                        <p>{item.abstract}</p>
+
+                                        <div className={styles.soMuch}>
+                                            <ul className={styles.authorWrap}>
+                                                <li><a href=""><img src={item.avatar} alt=""/></a></li>
+                                                <li><a href="">{item.author}</a></li>
+                                                <li>日期</li>
+                                            </ul>
+                                            <ul className={styles.count}>
+                                                <li>点击</li>
+                                                <li>点击</li>
+                                                <li>点击</li>
+                                            </ul>
+
+                                        </div>
+
+                                    </div>
+
+                                </article>
+                            ))
+                        }
+                    </TabPane>
+                    <TabPane tab="Tab 3" key="3">Content of Tab Pane 3</TabPane>
+
+                </Tabs>
+                <div ref="tag"></div>
             </div>
 
         )

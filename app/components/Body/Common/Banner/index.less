@@ -1,18 +1,39 @@
 .swiperWrap {
-
-  .slick-dots {
-
-    bottom: 25px;
+  width: 574px;
+  height: 338px;
+  .slick-prev {
+    left: 20px;
+    z-index: 10;
 
   }
-  width: 574px;
+  .slick-next {
+    right: 20px;
+    z-index: 10;
+  }
+  .slick-dots {
+
+    bottom: 10px;
+ text-align: right;
+
+  }
+
+
 
   a {
     display: block;
     height: 338px;
+    position: relative;
+    h3{
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 30px;
+      color: #fff;
+    }
     img {
       display: block;
-      width: 100%;
+      width: 574px;
+      height: 338px;
 
     }
   }

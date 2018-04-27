@@ -68,13 +68,21 @@ module.exports = {
                         loader: "css-loader",
                         options: {
                             modules: true,
-                            ignoreOrder: true
-                        }
+                            ignoreOrder: true,
+                            localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                            getLocalIdent: (context, localIdentName, localName, options) => {
+                                return localName
+                            }
+}
+
                     }, {
                         loader: "less-loader",
+                        // options: {
+                        //     strictMath: true,
+                        //     noIeCompat: true
+                        // }
                         options: {
-                            strictMath: true,
-                            noIeCompat: true
+                            javascriptEnabled: true//此设置能让在js中引入less文件，并进行打包
                         }
                     }]
 

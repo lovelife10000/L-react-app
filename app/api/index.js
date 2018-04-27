@@ -1,4 +1,4 @@
-import {UserResource,AuthResource,ArticleResource,TagResource,MobileResource,CommentResource,PartnersResource,BannerResource} from './resources'
+import {UserResource,AuthResource,ArticleResource,TagResource,MobileResource,CommentResource,PartnersResource,BannerResource,RecommendResource} from './resources'
 
 export default {
   localLogin: function (data) {
@@ -67,6 +67,10 @@ export default {
   getBannerData:function () {
       return BannerResource('get')
   },
+    getRecommendData:function () {
+        return RecommendResource('get')
+    },
+
 
 
 }

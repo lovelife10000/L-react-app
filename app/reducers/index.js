@@ -12,6 +12,7 @@ import showmsg from './showmsg'
 import globalVal from './globalVal'
 import partners from './partners'
 import bannerData from './bannerData'
+import recommendData from './recommendData'
 
 const rootReducer = combineReducers({
   globalVal,
@@ -20,7 +21,7 @@ const rootReducer = combineReducers({
   tagList,
   articleList,
   commentList,
-
+recommendData,
   options,
   auth,
   showmsg,
