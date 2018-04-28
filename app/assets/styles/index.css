@@ -1,0 +1,11 @@
+.container{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.leftColumn{
+  width: 840px;
+}
+.rightColumn{
+  width: 335px;
+}

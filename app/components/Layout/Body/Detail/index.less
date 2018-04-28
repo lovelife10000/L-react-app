@@ -1,0 +1,84 @@
+.det {
+  display: block;
+  .leftColumn {
+    .detTitle {
+      margin-bottom: 30px;
+      .title {
+        font-size: 22px;
+        margin-top: 5px;
+        line-height: 1.4;
+        margin-bottom: 13px;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+        width: 100%;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+      }
+      .authorPan {
+        display: flex;
+        width: 100%;
+        li {
+          flex: 0 0 auto;
+          margin: 0 5px;
+          a {
+            img {
+              border-radius: 100%;
+              max-width: 100%;
+              width: 42px;
+              height: 42px;
+              display: block;
+              border-style: none;
+            }
+          }
+          p {
+            font-size: 14px;
+            padding: 5px 0;
+          }
+          p:last-child {
+            color: #878e9a;
+            font-size: 12px;
+            padding-top: 2px;
+          }
+        }
+        .countPan {
+          display: flex;
+          margin-left: auto;
+          align-items: flex-end;
+          li {
+            color: #c9ccd0;
+            margin-left: 8px;
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+      }
+
+    }
+    .detAbstract {
+      blockquote {
+        background-color: #f2f5fb;
+        padding: 5px 20px;
+        margin-left: 0;
+        margin-right: 0;
+        color: #243342;
+        border-left: 5px solid #d0d6dc;
+        margin-bottom: 15px;
+        p {
+          margin-bottom: 15px;
+          line-height: 1.8;
+          margin-top: 15px;
+        }
+      }
+    }
+    .detContent {
+
+    }
+  }
+  .rightColumn {
+
+  }
+}
+

@@ -1,4 +1,4 @@
-import {UserResource,AuthResource,ArticleResource,TagResource,MobileResource,CommentResource,PartnersResource,BannerResource,RecommendResource} from './resources'
+import {UserResource,AuthResource,ArticleResource,TagResource,MobileResource,CommentResource,PartnersResource,BannerResource,RecommendResource,CateBannerResource,CateArticleResource,DetailResource} from './resources'
 
 export default {
   localLogin: function (data) {
@@ -69,6 +69,16 @@ export default {
   },
     getRecommendData:function () {
         return RecommendResource('get')
+    },
+    getCateBannerData:function () {
+        return CateBannerResource('get')
+    },
+    getCateArticleList:function (options) {
+        return CateArticleResource('get', null, null, {params:options})
+    },
+
+    getDetail:function (options) {
+        return DetailResource('get', null, null, {params:options})
     },
 
 

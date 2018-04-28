@@ -3,8 +3,8 @@ import {renderRoutes} from 'react-router-config'
 import PropTypes from 'prop-types'
 import * as Actions from '../../actions'
 
-import SiteFoot from '../Footer'
-import Header from '../Header'
+import Footer from './Footer'
+import Header from './Header'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 const mapStateToProps = state => {
@@ -21,40 +21,34 @@ const mapDispatchToProps = dispatch => {
 
 @connect(mapStateToProps, mapDispatchToProps)
 
-class App extends Component {
+class Layout extends Component {
   constructor() {
     super()
   }
 
   static fetchData() {
-    return [Actions.getPartners()]
   }
 
 
   static propTypes = {
-    route: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
-    partners: PropTypes.array.isRequired
   };
 
   componentDidMount() {
-    const {actions, partners} = this.props
-    if (partners.length < 1) {
-      actions.getPartners()
-    }
+    const {actions} = this.props
   }
 
   render() {
-    const {partners} =this.props
+    const {} =this.props
 
     return (
       <div>
         <Header />
-        <a href="">{partners.length}</a>
+        <a href=""></a>
 
         {renderRoutes(this.props.route.routes)}
 
-        <SiteFoot />
+        <Footer />
 
 
       </div>
@@ -62,4 +56,4 @@ class App extends Component {
   }
 }
 
-export default  App
+export default  Layout

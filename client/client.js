@@ -14,6 +14,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../app/assets/styles/reset.css'
 import '../app/assets/styles/base.less'
+import '../app/assets/styles/font-awesome.min.css'
+
+import 'assets/styles/index.css'
 
 const history = createHistory()
 const initialState = window.__INITIAL_STATE__

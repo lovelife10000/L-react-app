@@ -1,15 +1,12 @@
 import React, {Component} from 'react'
-import Banner from '../Common/Banner'
-import ArticleList from '../Common/ArticleList/index'
+import Banner from '../../../Common/Banner'
+import ArticleList from '../../../Common/ArticleList/index'
 import PropTypes from 'prop-types'
-import ShowWechat from '../Common/ShowWechat'
-import Ads from '../Common/Ads'
-import HotArticles from '../Common/HotArticles'
 import {connect} from 'react-redux'
 import * as Actions from 'actions'
 import {bindActionCreators} from 'redux'
 import styles from './index.less'
-import Recommend from '../Common/Recommend'
+import Recommend from '../../../Common/Recommend'
 
 const mapStateToProps = (state) => {
     return {
@@ -64,9 +61,6 @@ class LeftColumn extends Component {
                         <ArticleList articleList={articleList}/>
                     </div>
                     <div className={styles.rightColumn}>
-                        <ShowWechat/>
-                        <Ads/>
-                        <HotArticles/>
                     </div>
                 </div>
             </div>

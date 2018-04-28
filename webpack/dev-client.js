@@ -153,6 +153,8 @@ module.exports = {
         assets: path.resolve(__dirname, '../app/assets'),
         utils: path.resolve(__dirname, '../app/utils'),
         config: path.resolve(__dirname, '../app/config'),
+          components:path.resolve(__dirname, '../app/components'),
+          pages:path.resolve(__dirname, '../app/pages'),
       }
     }
 }

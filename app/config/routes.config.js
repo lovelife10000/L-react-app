@@ -1,7 +1,8 @@
-import Layout from '../components/Layout'
-import Category from '../components/Body/Category'
-import NotFound from '../components/404/NotFound'
-import Home from '../components/Body/Home'
+import Layout from 'components/Layout'
+import Category from 'components/Layout/Body/Category'
+import NotFound from 'components/404/NotFound'
+import Home from 'components/Layout/Body/Home'
+import Detail from 'components/Layout/Body/Detail'
 
 const routes = [
   { component: Layout,
@@ -14,6 +15,10 @@ const routes = [
         exact: true,
         component: Category
       },
+        { path: '/detail',
+            exact: true,
+            component: Detail
+        },
       {
         path: '*',
         component: NotFound

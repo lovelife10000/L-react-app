@@ -28,6 +28,14 @@ export const getBannerData=()=>{
   }
 }
 
+export const getCateBannerData=()=>{
+
+    return{
+        type:types.getCateBannerData,
+        promise:api.getCateBannerData()
+    }
+}
+
 export const getRecommendData = () =>{
 
   return {

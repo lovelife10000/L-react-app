@@ -54,6 +54,15 @@ export const addArticleList = (num) => {
         promise: api.addArticleList(num)
     }
 }
+
+export const getCateArticleList = () => {
+    return {
+        type:types.getCateArticleList,
+        promise: api.getCateArticleList()
+    }
+
+}
+
 //获取文章详情
 export const getArticleDetail = (id) => {
     return (dispatch, getState) => {

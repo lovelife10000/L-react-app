@@ -1,7 +1,7 @@
-import { combineReducers } from 'redux'
-import { routerReducer } from 'react-router-redux'
-import { reducer as formReducer } from 'redux-form'
-import { articleList } from './article'
+import {combineReducers} from 'redux'
+import {routerReducer} from 'react-router-redux'
+import {reducer as formReducer} from 'redux-form'
+import {articleList} from './article'
 import tagList from './tagList'
 import commentList from './comment'
 import auth from './auth'
@@ -13,22 +13,30 @@ import globalVal from './globalVal'
 import partners from './partners'
 import bannerData from './bannerData'
 import recommendData from './recommendData'
+import cateBannerData from './cateBannerData'
+import cateArticleList from './cateArticle'
+import detail from './detail'
+
 
 const rootReducer = combineReducers({
-  globalVal,
-  apps,
-  sns,
-  tagList,
-  articleList,
-  commentList,
-recommendData,
-  options,
-  auth,
-  showmsg,
-  router: routerReducer,
-  form: formReducer,
-  partners,
-    bannerData
+    globalVal,
+    apps,
+    sns,
+    tagList,
+    articleList,
+    commentList,
+    recommendData,
+    options,
+    auth,
+    showmsg,
+    router: routerReducer,
+    form: formReducer,
+    partners,
+    bannerData,
+    cateBannerData,
+detail,
+    cateArticleList,
+
 })
 
 export default rootReducer

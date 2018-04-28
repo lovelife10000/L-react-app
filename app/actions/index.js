@@ -1,4 +1,5 @@
 export * from './article'
+export * from './detail'
 export * from './comment'
 export * from './other'
 export * from './auth'

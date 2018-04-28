@@ -13,4 +13,22 @@ export default {
     getRecommendDataSuccess:"GET_RECOMMEND_DATA_SUCCESS",
     getRecommendDataFailure:"GET_RECOMMEND_DATA_FAILURE",
 
+
+    getCateBannerData:"GET_CATE_BANNER_DATA",
+    getCateBannerDataRequest:"GET_CATE_BANNER_DATA_REQUEST",
+    getCateBannerDataSuccess:"GET_CATE_BANNER_DATA_SUCCESS",
+    getCateBannerDataFailure:"GET_CATE_BANNER_DATA_FAILURE",
+
+
+    getCateArticleList:"GET_CATE_ARTICLE_lIST",
+    getCateArticleListRequest:"GET_CATE_ARTICLE_lIST_REQUEST",
+    getCateArticleListSuccess:"GET_CATE_ARTICLE_lIST_SUCCESS",
+    getCateArticleListFailure:"GET_CATE_ARTICLE_lIST_FAILURE",
+
+
+    getDetail:"GET_DETAIL",
+    getDetailRequest:"GET_DETAIL_REQUEST",
+    getDetailSuccess:"GET_DETAIL_SUCCESS",
+    getDetailFailure:"GET_DETAIL_FAILURE",
+
 }

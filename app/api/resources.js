@@ -61,3 +61,16 @@ export const BannerResource=(method, id, data, api='banner')=>{
 export const RecommendResource=(method, id, data, api='recommend')=>{
     return axios[method](api + (id ? ('/' + id) : ''), data)
 }
+
+
+export const CateBannerResource=(method, id, data, api='category/cateBanner')=>{
+    return axios[method](api + (id ? ('/' + id) : ''), data)
+}
+
+export const CateArticleResource = (method, id, controller, data, api='category/cateArticle') => {
+    return axios[method](api + (id ? ('/' + id) : '') + (controller ? ('/' + controller) : ''), data)
+}
+
+export const DetailResource = (method, id, controller, data, api='detail') => {
+    return axios[method](api + (id ? ('/' + id) : '') + (controller ? ('/' + controller) : ''), data)
+}
