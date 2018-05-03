@@ -2,20 +2,17 @@ const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true'
-const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin')
+
 
 module.exports = {
     devtool: 'cheap-module-source-map',
     name: 'browser',
     context: path.join(__dirname, '..', 'app'),
-    entry: {
-        vendor: ['react', 'redux', 'react-redux', 'react-router-redux', 'react-router-dom', 'react-router-config'],
-        bundle: ['../client/client.js', hotMiddlewareScript]
-    },
+    entry: ['../client/client.js', hotMiddlewareScript],
     output: {
         path: path.join(__dirname, '../dist'),
-        filename: '[name].js',
-        chunkFilename: '[name].js',
+        filename: '[name].bundle.js',
+        chunkFilename: '[name].bundle.js',
         publicPath: '/'
     },
     plugins: [
@@ -31,10 +28,7 @@ module.exports = {
         new webpack.LoaderOptionsPlugin({
             debug: true
         }),
-        new CommonsChunkPlugin({
-            name: 'vendor',
-            minChunks: Infinity //Infinity
-        }),
+
 
         new webpack.NoEmitOnErrorsPlugin(),
         new ExtractTextPlugin({
@@ -50,7 +44,10 @@ module.exports = {
                 test: /\.js$|\.jsx$/,
                 loader: 'babel-loader',
                 include: path.join(__dirname, '..'),
-                exclude: /node_modules/
+                exclude: /node_modules/,
+                options: {
+                    plugins: ['syntax-dynamic-import']
+                }
             },
             {
                 test: /\.css$/,
@@ -73,7 +70,7 @@ module.exports = {
                             getLocalIdent: (context, localIdentName, localName, options) => {
                                 return localName
                             }
-}
+                        }
 
                     }, {
                         loader: "less-loader",
@@ -144,17 +141,17 @@ module.exports = {
         ],
     },
     resolve: {
-      extensions: ['.js','.jsx','.sass','.css','.png'],
-      alias: {
-        images: path.resolve(__dirname, '../app/assets/images'),
-        actions: path.resolve(__dirname, '../app/actions'),
-        reducers: path.resolve(__dirname, '../app/reducers'),
-        api: path.resolve(__dirname, '../app/api'),
-        assets: path.resolve(__dirname, '../app/assets'),
-        utils: path.resolve(__dirname, '../app/utils'),
-        config: path.resolve(__dirname, '../app/config'),
-          components:path.resolve(__dirname, '../app/components'),
-          pages:path.resolve(__dirname, '../app/pages'),
-      }
+        extensions: ['.js', '.jsx', '.sass', '.css', '.png'],
+        alias: {
+            images: path.resolve(__dirname, '../app/assets/images'),
+            actions: path.resolve(__dirname, '../app/actions'),
+            reducers: path.resolve(__dirname, '../app/reducers'),
+            api: path.resolve(__dirname, '../app/api'),
+            assets: path.resolve(__dirname, '../app/assets'),
+            utils: path.resolve(__dirname, '../app/utils'),
+            config: path.resolve(__dirname, '../app/config'),
+            components: path.resolve(__dirname, '../app/components'),
+            pages: path.resolve(__dirname, '../app/pages'),
+        }
     }
 }

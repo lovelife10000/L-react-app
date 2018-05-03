@@ -1,30 +1,30 @@
-import Layout from 'components/Layout'
-import Category from 'components/Layout/Body/Category'
-import NotFound from 'components/404/NotFound'
-import Home from 'components/Layout/Body/Home'
-import Detail from 'components/Layout/Body/Detail'
+import * as loadable from './loadable'
 
 const routes = [
-  { component: Layout,
-    routes: [
-      { path: '/',
-        exact: true,
-        component: Home
-      },
-      { path: '/category',
-        exact: true,
-        component: Category
-      },
-        { path: '/detail',
-            exact: true,
-            component: Detail
-        },
-      {
-        path: '*',
-        component: NotFound
-      }
-    ]
-  }
+    {
+        component: loadable.LoadableLayout,
+        routes: [
+            {
+                path: '/',
+                exact: true,
+                component: loadable.LoadableHome
+            },
+            {
+                path: '/category',
+                exact: true,
+                component: loadable.LoadableCategory
+            },
+            {
+                path: '/detail',
+                exact: true,
+                component: loadable.LoadableDetail
+            },
+            {
+                path: '*',
+                component: loadable.LoadableNotFound
+            }
+        ]
+    }
 ]
 
 export default routes

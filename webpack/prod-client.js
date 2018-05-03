@@ -59,7 +59,7 @@ module.exports = [
         ],
         module: {
             rules: [
-                {enforce: 'pre', test: /\.js$|\.jsx$/, exclude: /node_modules/, use: ['eslint-loader']},
+                // {enforce: 'pre', test: /\.js$|\.jsx$/, exclude: /node_modules/, use: ['eslint-loader']},
                 {
                     test: /\.js$|\.jsx$/,
                     loader: 'babel-loader',
@@ -82,10 +82,22 @@ module.exports = [
                             loader: "css-loader",
                             options: {
                                 modules: true,
-                                ignoreOrder: true
+                                ignoreOrder: true,
+                                localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                                getLocalIdent: (context, localIdentName, localName, options) => {
+                                    return localName
+                                }
                             }
+
                         }, {
-                            loader: "less-loader"
+                            loader: "less-loader",
+                            // options: {
+                            //     strictMath: true,
+                            //     noIeCompat: true
+                            // }
+                            options: {
+                                javascriptEnabled: true//此设置能让在js中引入less文件，并进行打包
+                            }
                         }]
 
                     })
@@ -145,17 +157,20 @@ module.exports = [
                 {test: /\.json$/, use: ['json-loader']},
             ],
         },
-        // resolve: {
-        //   extensions: ['.js', '.jsx', '.css'],
-        //   alias: {
-        //     components: path.resolve(__dirname, '../src/components'),
-        //     actions: path.resolve(__dirname, '../src/actions'),
-        //     reducers: path.resolve(__dirname, '../src/reducers'),
-        //     api: path.resolve(__dirname, '../src/api'),
-        //     assets: path.resolve(__dirname, '../src/assets'),
-        //     utils: path.resolve(__dirname, '../src/utils'),
-        //   }
-        // }
+        resolve: {
+            extensions: ['.js','.jsx','.sass','.css','.png'],
+            alias: {
+                images: path.resolve(__dirname, '../app/assets/images'),
+                actions: path.resolve(__dirname, '../app/actions'),
+                reducers: path.resolve(__dirname, '../app/reducers'),
+                api: path.resolve(__dirname, '../app/api'),
+                assets: path.resolve(__dirname, '../app/assets'),
+                utils: path.resolve(__dirname, '../app/utils'),
+                config: path.resolve(__dirname, '../app/config'),
+                components:path.resolve(__dirname, '../app/components'),
+                pages:path.resolve(__dirname, '../app/pages'),
+            }
+        }
     },
 
 ]

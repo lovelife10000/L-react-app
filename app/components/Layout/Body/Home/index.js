@@ -8,6 +8,7 @@ import {bindActionCreators} from 'redux'
 import styles from './index.less'
 import Recommend from '../../../Common/Recommend'
 
+
 const mapStateToProps = (state) => {
     return {
         articleList: state.articleList.toJS()
@@ -21,10 +22,10 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-@connect(mapStateToProps, mapDispatchToProps)
 
 
-class LeftColumn extends Component {
+
+class Home extends Component {
     constructor() {
         super()
     }
@@ -69,4 +70,4 @@ class LeftColumn extends Component {
     }
 }
 
-export default LeftColumn
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

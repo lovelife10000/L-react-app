@@ -37,7 +37,7 @@ class ArticleList extends Component {
     componentDidMount() {
         const {actions} = this.props
         this.getArticleList()
-        window.addEventListener('scroll', this.orderScroll.bind(this));
+        // window.addEventListener('scroll', this.orderScroll.bind(this));
     }
 
     getArticleList() {
@@ -52,19 +52,19 @@ class ArticleList extends Component {
     }
 
 
-    orderScroll() {
-        console.log('滚动条滚动了');
-        const dom = this.refs.tag
-
-        const y1 = dom.getBoundingClientRect().top
-
-        const y2 = window.innerHeight;
-        if (y1 < y2) {
-            const {actions} = this.props;
-            actions.addArticleList();
-        }
-
-    }
+    // orderScroll() {
+    //     console.log('滚动条滚动了');
+    //     const dom = this.refs.tag
+    //
+    //     const y1 = dom.getBoundingClientRect().top
+    //
+    //     const y2 = window.innerHeight;
+    //     if (y1 < y2) {
+    //         const {actions} = this.props;
+    //         actions.addArticleList();
+    //     }
+    //
+    // }
 
     callback(key) {
         console.log(key);

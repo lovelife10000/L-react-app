@@ -14,15 +14,17 @@
     ],
     [
       "react"
-    ]
+    ],
+    "stage-0"
   ],
   "plugins": [
     "transform-decorators-legacy",
     "syntax-async-functions",
     "transform-object-rest-spread",
-    "transform-class-properties"
+    "transform-class-properties",
+    "syntax-dynamic-import"
   ],
-  "comments": false,
+  "comments": true,
   "env": {
     "development": {
       "plugins": [

@@ -11,77 +11,83 @@ import routes from '../app/config/routes.config'
 import {API_ROOT} from '../app/config/app.config'
 
 async function fetchAllData(batch, dispatch, token) {
-  const needs = batch.map(({route, match}, index)=> {
-    match.params = Object.assign({}, match.params, {token: token})
-    return {component: route.component, params: match.params}
-  }).filter(x=>x.component.fetchData)
-    .reduce((prev, current)=> {
-      return current.component.fetchData(current.params).concat(prev)
-    }, [])
-    .map(x=> {
-      return dispatch(x)
-    })
-  return await Promise.all(needs)
+    const needs = batch.map(({route, match}, index) => {
+        match.params = Object.assign({}, match.params, {token: token})
+        return {component: route.component, params: match.params}
+    }).filter(x => x.component.fetchData)
+        .reduce((prev, current) => {
+            return current.component.fetchData(current.params).concat(prev)
+        }, [])
+        .map(x => {
+            return dispatch(x)
+        })
+    return await Promise.all(needs)
 }
 
 export default function serverRender(req, res) {
 
-  const cookies = new Cookies(req.headers.cookie)
-  const history = createMemoryHistory()
-  const token = cookies.get('token') || null
-  const styleMode = cookies.get('styleMode') || 'day-mode'
-  const store = configureStore({
-    auth: fromJS({
-      token: token,
-      user: null
-    }),
-    globalVal: fromJS({
-      styleMode: styleMode,
-      captchaUrl: API_ROOT + 'users/getCaptcha?'
+    const cookies = new Cookies(req.headers.cookie)
+    const history = createMemoryHistory()
+    const token = cookies.get('token') || null
+    const styleMode = cookies.get('styleMode') || 'day-mode'
+    const store = configureStore({
+        auth: fromJS({
+            token: token,
+            user: null
+        }),
+        globalVal: fromJS({
+            styleMode: styleMode,
+            captchaUrl: API_ROOT + 'users/getCaptcha?'
+        })
+    }, history)
+    const batch = matchRoutes(routes, req.url)
+    return fetchAllData(batch, store.dispatch, token).then(function (data) {
+        const context = {}
+        const initialState = store.getState()
+        const InitialView = (
+            <Provider store={store}>
+                <StaticRouter location={req.url} context={context}>
+                    {renderRoutes(routes)}
+                </StaticRouter>
+            </Provider>);
+        const componentHTML = renderToString(InitialView)
+
+
+        if (context.status === 404) {
+            res.status(404)
+        }
+        if (context.status === 302) {
+            return res.redirect(302, context.url)
+        }
+        if (__DEVSERVER__) {
+            res.set('Content-Type', 'text/html')
+            return res.status(200).send(renderFullPage(componentHTML, initialState, styleMode))
+        } else {
+
+            return res.render('index', {
+                __html__: componentHTML,
+                __state__: JSON.stringify(initialState),
+                __styleMode__: styleMode
+            })
+        }
+
+    }).catch(err => {
+        // throw (err)
+        if (__DEVSERVER__) {
+            res.set('Content-Type', 'text/html')
+            return res.status(200).send(renderFullPage('', {}))
+        } else {
+            return res.render('index', {
+                __html__: '',
+                __state__: {},
+                __styleMode__: styleMode
+            })
+        }
     })
-  }, history)
-  const batch = matchRoutes(routes, req.url)
-  return fetchAllData(batch, store.dispatch, token).then(function (data) {
-    const context = {}
-    const initialState = store.getState()
-    const InitialView = (
-      <Provider store={store}>
-        <StaticRouter location={ req.url } context={ context }>
-          {renderRoutes(routes)}
-        </StaticRouter>
-      </Provider>);
-    const componentHTML = renderToString(InitialView)
-
-
-    if (context.status === 404) {
-      res.status(404)
-    }
-    if (context.status === 302) {
-      return res.redirect(302, context.url)
-    }
-    if (__DEVSERVER__) {
-      res.set('Content-Type', 'text/html')
-      return res.status(200).send(renderFullPage(componentHTML, initialState, styleMode))
-    } else {
-      return res.render('index', {
-        __html__: componentHTML,
-        __state__: JSON.stringify(initialState),
-        __styleMode__: styleMode
-      })
-    }
-
-  }).catch(err => {
-    if (__DEVSERVER__) {
-      res.set('Content-Type', 'text/html')
-      return res.status(200).send(renderFullPage('', {}))
-    } else {
-      return res.render('index', {__html__: '', __state__: {}})
-    }
-  })
 }
 
 function renderFullPage(renderedContent, initialState, styleMode) {
-  return `<!doctype html>
+    return `<!doctype html>
   <html>
     <head>
       <meta charset="utf-8">
