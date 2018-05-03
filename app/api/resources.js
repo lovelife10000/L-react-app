@@ -26,7 +26,7 @@ axios.interceptors.response.use(function (response) {
   }
   return response
 }, function (error) {
-  // Do something with response error
+
   return Promise.reject(error)
 })
 
@@ -39,20 +39,10 @@ export const AuthResource = (method, id, data, api='auth') => {
 export const ArticleResource = (method, id, controller, data, api='article') => {
   return axios[method](api + (id ? ('/' + id) : '') + (controller ? ('/' + controller) : ''), data)
 }
-export const TagResource = (method, id, data, api='tags') => {
-  return axios[method](api + (id ? ('/' + id) : ''), data)
-}
-export const CommentResource = (method, id, controller, data, api='comment') => {
-  return axios[method](api + (id ? ('/' + id) : '') + (controller ? ('/' + controller) : ''), data)
-}
-export const MobileResource = (method, id, data, api='mobile') => {
-  return axios[method](api + (id ? ('/' + id) : ''), data)
-}
 
-export const PartnersResource = (method, id, data, api='partners') => {
-  console.log('这里执行了6')
-  return axios[method](api + (id ? ('/' + id) : ''), data)
-}
+
+
+
 
 export const BannerResource=(method, id, data, api='banner')=>{
     return axios[method](api + (id ? ('/' + id) : ''), data)

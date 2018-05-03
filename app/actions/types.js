@@ -31,4 +31,9 @@ export default {
     getDetailSuccess:"GET_DETAIL_SUCCESS",
     getDetailFailure:"GET_DETAIL_FAILURE",
 
+    getCategories:"GET_CATEGORIES",
+    getCategoriesRequest:"GET_CATEGORIES_REQUEST",
+    getCategoriesSuccess:"GET_CATEGORIES_SUCCESS",
+    getCategoriesFailure:"GET_CATEGORIES_FAILURE",
+
 }

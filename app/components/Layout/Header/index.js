@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import classnames from 'classnames';
 import styles from './index.less';
-import Nav from './Nav'
+import Nav from 'components/Common/Nav'
 import logo from 'images/logo.png'
 
 class Header extends Component {
@@ -15,18 +15,17 @@ class Header extends Component {
         });
         return (
 
-                <div className={cls}>
-                    <div className={styles.headerInner}>
-                        <div className={styles.logo}>
-                            <a href="/">
-                                <img className={styles.logo} src={logo}/>
-                            </a>
-                        </div>
-                        <Nav/>
+            <div className={cls}>
+                <div className={styles.headerInner}>
+                    <div className={styles.logo}>
+                        <a href="/">
+                            <img className={styles.logo} src={logo}/>
+                        </a>
                     </div>
-
+                    <Nav/>
                 </div>
 
+            </div>
 
 
         )

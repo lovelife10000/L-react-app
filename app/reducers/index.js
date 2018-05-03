@@ -16,6 +16,7 @@ import recommendData from './recommendData'
 import cateBannerData from './cateBannerData'
 import cateArticleList from './cateArticle'
 import detail from './detail'
+import categories from './categories'
 
 
 const rootReducer = combineReducers({
@@ -34,7 +35,8 @@ const rootReducer = combineReducers({
     partners,
     bannerData,
     cateBannerData,
-detail,
+    detail,
+    categories,
     cateArticleList,
 
 })
