@@ -33,7 +33,9 @@ class Detail extends Component {
     };
 
     componentDidMount() {
+        debugger
         const {actions} = this.props
+        debugger
 actions.getDetail()
     }
 

@@ -1,5 +1,5 @@
 import  types from 'actions/types'
-import api from 'api'
+import * as api from 'api'
 
 //改变样式风格.
 export const changeStyleMode = () => ({ type: types.CHANGE_STYLE_MODE })

@@ -1,5 +1,5 @@
 import types from 'actions/types'
-import api from 'api'
+import * as api from 'api'
 import {getUserInfo} from './auth'
 
 //获取标签列表.
@@ -9,37 +9,15 @@ export const getTagList = () => {
         promise: api.getTagList()
     }
 }
-//更改options
-export const changeOptions = (option) => ({type: types.CHANGE_OPTIONS, option: option})
 
-//切换Like
-function receiveToggleLike(json) {
-    return {
-        type: types.TOGGLE_LIKE_SUCCESS,
-        like_count: json.count,
-        isLike: json.isLike
-    }
-}
 
-export function toggleLike(aid) {
-    return (dispatch, getState) => {
-        return api.toggleLike(aid)
-            .then(response => ({json: response.data, status: response.statusText}))
-            .then(({json, status}) => {
-                if (status !== 'OK') {
-                    return dispatch({type: types.TOGGLE_LIKE_FAILURE})
-                }
-                dispatch(getUserInfo())
-                return dispatch(receiveToggleLike(json))
-            })
-            .catch(error => {
-                return dispatch({type: types.TOGGLE_LIKE_FAILURE})
-            })
-    }
-}
+
+
+
 
 /*获取文章列表*/
 export const getArticleList = (isAdd = true) => {
+
     return {
         type:types.getArticleList,
         promise: api.getArticleList()
@@ -93,13 +71,3 @@ export const getArticleDetail = (id) => {
     }
 }
 
-//获取上下一篇文章
-export const getPrenext = (id) => {
-    return (dispatch, getState) => {
-        const options = getState().options.toJS()
-        return dispatch({
-            type: types.PRENEXT_ARTICLE,
-            promise: api.getPrenext(id, options)
-        })
-    }
-}

@@ -10,7 +10,11 @@ class Category extends Component {
         super()
 
     }
+    componentDidMount() {
+        console.log(777)
+        debugger
 
+    }
 
     render() {
 

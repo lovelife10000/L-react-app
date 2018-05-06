@@ -1,4 +1,4 @@
-import categoryApi from 'api/category'
+import * as api from 'api'
 import  types from 'actions/types'
 
 export const getCategories = () => {
@@ -6,7 +6,7 @@ export const getCategories = () => {
     return {
 
         type: types.getCategories,
-        promise: categoryApi.getCategories()
+        promise: api.getCategories()
     }
 };
 

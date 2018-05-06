@@ -28,6 +28,7 @@ const mapDispatchToProps = (dispatch) => {
 class Home extends Component {
     constructor() {
         super()
+
     }
 
 
@@ -41,15 +42,21 @@ class Home extends Component {
     }
 
     componentDidMount() {
+
         const {actions, articleList} = this.props
         if (articleList.length < 1) {
+
             actions.getArticleList()
         }
     }
 
+
+
     render() {
         const {articleList} = this.props
+
         return (
+
             <div className={styles.container}>
                 <div className={styles.subHead}>
                     <Banner/>

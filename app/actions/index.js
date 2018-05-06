@@ -1,4 +1,4 @@
-export * from './article'
+export * from './home'
 export * from './detail'
 export * from './comment'
 export * from './other'
