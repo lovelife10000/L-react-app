@@ -1,12 +1,14 @@
-import React, {Component} from 'react'
-import {renderRoutes} from 'react-router-config'
+import React, { Component } from 'react'
+import { renderRoutes } from 'react-router-config'
 import PropTypes from 'prop-types'
 import * as Actions from '../../actions'
 
 import Footer from './Footer'
 import Header from './Header'
-import {bindActionCreators} from 'redux'
-import {connect} from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+
+
 const mapStateToProps = state => {
   return {
     partners: state.partners.toJS()
@@ -25,6 +27,10 @@ class Layout extends Component {
   constructor() {
     super()
   }
+  static propTypes = {
+    route: PropTypes.object.isRequired,
+    actions: PropTypes.object.isRequired,
+  };
 
   static fetchData() {
   }
@@ -35,11 +41,11 @@ class Layout extends Component {
   };
 
   componentDidMount() {
-    const {actions} = this.props
+    // const { actions } = this.props
   }
 
   render() {
-    const {} =this.props
+    // const { } = this.props
 
     return (
       <div>
@@ -56,4 +62,4 @@ class Layout extends Component {
   }
 }
 
-export default  Layout
+export default Layout

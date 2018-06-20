@@ -1,58 +1,63 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import * as Actions from 'actions';
 import styles from './index.less'
+import PropTypes from 'prop-types'
 
 const mapStateToProps = (state) => {
-    return {
-        recommendData: state.recommendData.toJS()
-    }
+  return {
+    recommendData: state.recommendData.toJS()
+  }
 }
 const mapDispatchToProps = (dispatch) => {
-    return {
-        actions: bindActionCreators(Actions, dispatch)
-    }
+  return {
+    actions: bindActionCreators(Actions, dispatch)
+  }
 }
 
 class Recommend extends Component {
-    constructor(props) {
-        super(props)
-    }
+  constructor(props) {
+    super(props)
+  }
+  static propTypes = {
+    recommendData: PropTypes.array.isRequired,
+    actions: PropTypes.object.isRequired,
+  };
 
-    componentDidMount() {
+  componentDidMount() {
 
-        this.getRecommendData();
+    this.getRecommendData();
 
-    }
+  }
 
-    getRecommendData() {
-        const {actions} = this.props;
+  getRecommendData() {
+    const { actions } = this.props;
 
-        actions.getRecommendData();
-    }
+    actions.getRecommendData();
+  }
 
-    render() {
-        const {recommendData} = this.props;
+  render() {
+    const { recommendData } = this.props;
 
-        return (
+    return (
 
-            <ul className={styles.recommend}>
+      <ul className={styles.recommend}>
 
-                    {
-                        recommendData.map((item,index)=>(
-                            <li key={index}>
+        {
+          recommendData.map((item, index) => (
+            <li key={index}>
 
-                                <a href={item.url}>
-                                    <h3>{item.title}</h3><img src={item.img} alt=""/></a></li>
-                        ))
-                    }
+              <a href={item.url}>
+                <h3>{item.title}</h3><img src={item.img} alt="" /></a></li>
+          ))
+        }
 
 
-            </ul>
-        )
-    }
+      </ul>
+    )
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recommend)

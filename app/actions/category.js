@@ -3,10 +3,10 @@ import  types from 'actions/types'
 
 export const getCategories = () => {
 
-    return {
+  return {
 
-        type: types.getCategories,
-        promise: api.getCategories()
-    }
+    type: types.getCategories,
+    promise: api.getCategories()
+  }
 };
 

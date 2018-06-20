@@ -10,69 +10,69 @@ import Recommend from '../../../Common/Recommend'
 
 
 const mapStateToProps = (state) => {
-    return {
-        articleList: state.articleList.toJS()
-    }
+  return {
+    articleList: state.articleList.toJS()
+  }
 };
 
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        actions: bindActionCreators(Actions, dispatch)
-    }
+  return {
+    actions: bindActionCreators(Actions, dispatch)
+  }
 };
 
 
 
 
 class Home extends Component {
-    constructor() {
-        super()
+  constructor() {
+    super()
 
-    }
+  }
 
 
     static propTypes = {
-        actions: PropTypes.object.isRequired,
-        articleList: PropTypes.array.isRequired
+      actions: PropTypes.object.isRequired,
+      articleList: PropTypes.array.isRequired
     };
 
     static fetchData() {
-        return [Actions.getArticleList()]
+      return [Actions.getArticleList()]
     }
 
     componentDidMount() {
 
-        const {actions, articleList} = this.props
-        if (articleList.length < 1) {
+      const {actions, articleList} = this.props
+      if (articleList.length < 1) {
 
-            actions.getArticleList()
-        }
+        actions.getArticleList()
+      }
     }
 
 
 
     render() {
-        const {articleList} = this.props
+      const {articleList} = this.props
 
-        return (
+      return (
 
-            <div className={styles.container}>
-                <div className={styles.subHead}>
-                    <Banner/>
-                    <Recommend/>
-                </div>
-                <div className={styles.body}>
+        <div className={styles.container}>
+          <div className={styles.subHead}>
+            <Banner/>
+            <Recommend/>
+          </div>
+          <div className={styles.body}>
 
-                    <div className={styles.leftColumn}>
+            <div className={styles.leftColumn}>
 
-                        <ArticleList articleList={articleList}/>
-                    </div>
-                    <div className={styles.rightColumn}>
-                    </div>
-                </div>
+              <ArticleList articleList={articleList}/>
             </div>
-        )
+            <div className={styles.rightColumn}>
+            </div>
+          </div>
+        </div>
+      )
 
     }
 }

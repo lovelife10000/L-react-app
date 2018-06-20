@@ -24,16 +24,16 @@ export const getApps = () =>{
 export const getBannerData=()=>{
   return{
     type:'GET_BANNER_DATA',
-      promise:api.getBannerData()
+    promise:api.getBannerData()
   }
 }
 
 export const getCateBannerData=()=>{
 
-    return{
-        type:types.getCateBannerData,
-        promise:api.getCateBannerData()
-    }
+  return{
+    type:types.getCateBannerData,
+    promise:api.getCateBannerData()
+  }
 }
 
 export const getRecommendData = () =>{
