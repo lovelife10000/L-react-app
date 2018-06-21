@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
-module.exports = [
+module.exports =
 
     {
         // The configuration for the server-side rendering
@@ -142,4 +142,3 @@ module.exports = [
             }
         }
     }
-]

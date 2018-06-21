@@ -2,64 +2,64 @@ const webpack = require('webpack')
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+// const package=require('../package')
 
-module.exports = [
-    {
+module.exports =    {
+    mode: 'production',
         name: 'browser',
         devtool: 'hidden-source-map',
         context: path.join(__dirname, '..', 'app'),
         entry: {
-            vendor: ['react', 'redux', 'react-redux', 'react-router-redux', 'react-router-dom', 'react-router-config'],
+            vendor: ['react'],
             bundle: '../client/client.js'
         },
         output: {
             path: path.join(__dirname, '../dist'),
-            filename: '[hash:8].[name].js',
+            filename: 'js/[hash:8].[name].js',
             publicPath: '/',
-            chunkFilename: '[name].js',
+            chunkFilename: 'js/[hash:8].[name].chunk.js',
         },
+
         plugins: [
-            new webpack.DefinePlugin({
-                __DEVCLIENT__: false,
-                __DEVSERVER__: false,
-                __DEVTOOLS__: false,
-                __DEVLOGGER__: false,
-                'process.env': {
-                    'NODE_ENV': JSON.stringify('production')
-                }
-            }),
-            new webpack.optimize.OccurrenceOrderPlugin(),
-            new UglifyJSPlugin(),
-            new CommonsChunkPlugin({
-                name: 'vendor',
-                minChunks: Infinity //Infinity
-            }),
-            new ExtractTextPlugin({
-                filename: '[hash:8].style.css',
-                disable: false, allChunks: true
-            }),
-            new HtmlWebpackPlugin({
-                favicon: path.join(__dirname, '../app/assets/images/favicon.ico'),
-                title: 'L-react-app',
-                template: path.join(__dirname, '../app/assets/index.html'),
-                filename: 'index.ejs',
-                inject: 'body',
-                htmlContent: '<%- __html__ %>',
-                initialData: 'window.__INITIAL_STATE__ = <%- __state__ %>',
-                styleMode: '<%- __styleMode__ %>',
-                baiduappkey: process.env.BAIDU_TONGJI_APPKEY,
-                hash: false,    //为静态资源生成hash值
-                minify: {    //压缩HTML文件
-                    removeComments: false,    //移除HTML中的注释
-                    collapseWhitespace: false    //删除空白符与换行符
-                }
-            }),
+            new webpack.LoaderOptionsPlugin({ options: {} }),
+            // new webpack.DefinePlugin({
+            //     __DEVCLIENT__: false,
+            //     __DEVSERVER__: false,
+            //     __DEVTOOLS__: false,
+            //     __DEVLOGGER__: false,
+            //     'process.env': {
+            //         'NODE_ENV': JSON.stringify('production')
+            //     }
+            // }),
+            // new webpack.optimize.OccurrenceOrderPlugin(),
+            // new UglifyJSPlugin(),
+
+
+            // new ExtractTextPlugin({
+            //     filename: '[hash:8].style.css',
+            //     disable: false, allChunks: true
+            // }),
+            // new HtmlWebpackPlugin({
+            //     favicon: path.join(__dirname, '../app/assets/images/favicon.ico'),
+            //     title: 'L-react-app',
+            //     template: path.join(__dirname, '../app/assets/index.html'),
+            //     filename: 'index.ejs',
+            //     inject: 'body',
+            //     htmlContent: '<%- __html__ %>',
+            //     initialData: 'window.__INITIAL_STATE__ = <%- __state__ %>',
+            //     styleMode: '<%- __styleMode__ %>',
+            //     baiduappkey: process.env.BAIDU_TONGJI_APPKEY,
+            //     hash: false,    //为静态资源生成hash值
+            //     minify: {    //压缩HTML文件
+            //         removeComments: false,    //移除HTML中的注释
+            //         collapseWhitespace: false    //删除空白符与换行符
+            //     }
+            // }),
         ],
         module: {
             rules: [
-                // {enforce: 'pre', test: /\.js$|\.jsx$/, exclude: /node_modules/, use: ['eslint-loader']},
+                {enforce: 'pre', test: /\.js$|\.jsx$/, exclude: /node_modules/, use: ['eslint-loader']},
                 {
                     test: /\.js$|\.jsx$/,
                     loader: 'babel-loader',
@@ -157,6 +157,25 @@ module.exports = [
                 {test: /\.json$/, use: ['json-loader']},
             ],
         },
+        optimization: {
+            usedExports: true,
+            runtimeChunk: {
+                name: "manifest"
+            },
+            splitChunks: {
+                chunks: "all",
+                name: true,
+                cacheGroups: {
+                    default: false,
+                    vendor: {
+                        test: /[\\/]node_modules[\\/]/,
+                        chunks: "initial",
+                        name: "vendor",
+                        maxInitialRequests: 5,
+                    },
+                }
+            }
+        },
         resolve: {
             extensions: ['.js','.jsx','.sass','.css','.png'],
             alias: {
@@ -171,6 +190,5 @@ module.exports = [
                 pages:path.resolve(__dirname, '../app/pages'),
             }
         }
-    },
+    }
 
-]

@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
 import {routerReducer} from 'react-router-redux'
-import {reducer as formReducer} from 'redux-form'
+// import {reducer as formReducer} from 'redux-form'
 import {articleList} from './article'
 import tagList from './tagList'
 import commentList from './comment'
@@ -31,7 +31,7 @@ const rootReducer = combineReducers({
   auth,
   showmsg,
   router: routerReducer,
-  form: formReducer,
+  // form: formReducer,
   partners,
   bannerData,
   cateBannerData,
