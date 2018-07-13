@@ -30,6 +30,7 @@ class Detail extends Component {
   };
 
   static fetchData() {
+      return []
   }
 
 

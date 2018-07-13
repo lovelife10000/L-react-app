@@ -40,10 +40,10 @@
       "error",
       "single"
     ],
-//    "semi": [
-//      "error",
-//      "never"
-//    ],
+    "semi": [
+      "error",
+      "never"
+    ],
     "no-console": 0,
     "no-unused-vars": ["error", { "vars": "all", "args": "none" }],
     "no-mixed-spaces-and-tabs": [0],

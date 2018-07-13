@@ -7,20 +7,24 @@ import {Provider} from 'react-redux'
 import Cookies from 'universal-cookie'
 import {fromJS} from 'immutable'
 import configureStore from '../app/store/configureStore'
-import routes from '../app/config/routes.config'
+import routes from '../app/config/routes-sync'
 import {API_ROOT} from '../app/config/app.config'
 
 async function fetchAllData(batch, dispatch, token) {
+    debugger
     const needs = batch.map(({route, match}, index) => {
         match.params = Object.assign({}, match.params, {token: token})
         return {component: route.component, params: match.params}
-    }).filter(x => x.component.fetchData)
+    })
+        .filter(x => x.component.fetchData)
         .reduce((prev, current) => {
+            debugger
             return current.component.fetchData(current.params).concat(prev)
         }, [])
         .map(x => {
             return dispatch(x)
         })
+    debugger
     return await Promise.all(needs)
 }
 
@@ -41,7 +45,9 @@ export default function serverRender(req, res) {
         })
     }, history)
     const batch = matchRoutes(routes, req.url)
+    debugger
     return fetchAllData(batch, store.dispatch, token).then(function (data) {
+        debugger
         const context = {}
         const initialState = store.getState()
         const InitialView = (
@@ -72,6 +78,7 @@ export default function serverRender(req, res) {
         }
 
     }).catch(err => {
+        debugger
         // throw (err)
         if (__DEVSERVER__) {
             res.set('Content-Type', 'text/html')

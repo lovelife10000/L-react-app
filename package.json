@@ -13,7 +13,8 @@
     "build-client:prod": "better-npm-run build-client:prod",
     "build-server:prod": "better-npm-run build-server:prod",
     "try": "better-npm-run try",
-    "start": "pm2 start process.json"
+    "start": "pm2 start process.json",
+    "start-inspect2":"better-npm-run start-inspect"
   },
   "betterScripts": {
     "nodemon-dev": {
@@ -24,6 +25,12 @@
     },
     "try": {
       "command": "nodemon ./server/server.js",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "start-inspect": {
+      "command": "nodemon --inspect ./server/server.js",
       "env": {
         "NODE_ENV": "production"
       }
@@ -48,10 +55,7 @@
     }
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "history": "^4.7.2",
-    "immutable": "3.8.1",
-    "prop-types": "15.5.10",
+
     "react": "15.6.1",
     "react-dom": "15.6.1",
     "react-redux": "5.0.6",
@@ -61,7 +65,11 @@
     "react-router-redux": "^5.0.0-alpha.6",
     "redux": "3.7.2",
     "redux-immutablejs": "0.0.8",
-    "redux-thunk": "2.2.0"
+    "redux-thunk": "2.2.0",
+    "axios": "^0.18.0",
+    "history": "^4.7.2",
+    "immutable": "3.8.1",
+    "prop-types": "15.5.10"
   },
   "devDependencies": {
     "antd": "^3.4.3",
@@ -96,11 +104,11 @@
     "eslint-plugin-react": "7.3.0",
     "express": "4.15.4",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "file-loader": "^0.11.2",
+    "file-loader": "^1.1.11",
     "font-awesome": "4.7.0",
     "html-loader": "0.5.1",
     "html-webpack-plugin": "^3.2.0",
-    "image-webpack-loader": "^3.3.1",
+    "image-webpack-loader": "^4.3.1",
     "jackblog-sass": "1.0.9",
     "json-loader": "0.5.7",
     "less": "^3.0.2",
@@ -134,7 +142,7 @@
     "through2": "2.0.3",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "universal-cookie": "^2.1.0",
-    "url-loader": "0.5.9",
+    "url-loader": "^1.0.1",
     "webpack": "^4.12.0",
     "webpack-cli": "^3.0.8",
     "webpack-dev-middleware": "1.12.0",

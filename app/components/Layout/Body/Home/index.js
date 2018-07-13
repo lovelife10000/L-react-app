@@ -38,7 +38,7 @@ class Home extends Component {
     };
 
     static fetchData() {
-      return [Actions.getArticleList()]
+      return []
     }
 
     componentDidMount() {

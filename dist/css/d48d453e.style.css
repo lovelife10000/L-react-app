@@ -1,0 +1,425 @@
+.footer {
+  background-color: #222c3c;
+  color: #818394;
+  padding: 10px 0;
+}
+.footer .copyright {
+  font-size: 12px;
+  padding: 10px 0;
+  line-height: 1.8;
+  width: 1200px;
+  text-align: center;
+  margin: 0 auto;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  height: 60px;
+  line-height: 60px;
+  z-index: 5;
+}
+.header .headerInner {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+.header .headerInner .logo {
+  float: left;
+}
+.header .headerInner .logo img {
+  width: 150px;
+  display: block;
+}
+.header .headerInner .searchSession {
+  float: right;
+}
+.navWrap {
+  font-size: 15px;
+  float: left;
+}
+.navWrap .headerNav {
+  font-size: 15px;
+  display: block;
+  padding-left: 30px;
+}
+.navWrap .headerNav ul {
+  color: #555;
+  font-size: 14px;
+  padding-left: 50px;
+  margin: 0;
+  list-style: none;
+}
+.navWrap .headerNav ul li {
+  display: inline-block;
+  padding-left: 12px;
+  padding-right: 12px;
+  position: relative;
+}
+.ant-dropdown-link {
+  padding: 0 14px;
+}
+.swiperWrap {
+  width: 574px;
+  height: 338px;
+}
+.swiperWrap .slick-prev {
+  left: 20px;
+  z-index: 10;
+}
+.swiperWrap .slick-next {
+  right: 20px;
+  z-index: 10;
+}
+.swiperWrap .slick-dots {
+  bottom: 10px;
+  text-align: right;
+}
+.swiperWrap a {
+  display: block;
+  height: 338px;
+  position: relative;
+}
+.swiperWrap a h3 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 30px;
+  color: #fff;
+}
+.swiperWrap a img {
+  display: block;
+  width: 574px;
+  height: 338px;
+}
+.articleWrap {
+  padding: 20px;
+  display: flex;
+  background: #fff;
+  height: 200px;
+  border-bottom: 1px solid #eee;
+}
+.articleWrap .articleImg {
+  background: grey;
+}
+.articleWrap .articleImg img {
+  display: block;
+  width: 215px;
+  height: 140px;
+}
+.articleWrap .articlePanel {
+  width: 100%;
+  margin-right: auto;
+  margin-left: 15px;
+}
+.articleWrap .articlePanel .title {
+  padding-top: 20px;
+  font-size: 20px;
+}
+.articleWrap .articlePanel p {
+  margin: 20px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.articleWrap .articlePanel .soMuch {
+  display: flex;
+}
+.articleWrap .articlePanel .soMuch .authorWrap {
+  display: flex;
+  align-items: center;
+}
+.articleWrap .articlePanel .soMuch .authorWrap li {
+  margin-right: 15px;
+}
+.articleWrap .articlePanel .soMuch .authorWrap li a img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50% ;
+}
+.articleWrap .articlePanel .soMuch .count {
+  margin-left: auto;
+}
+.articleWrap .articlePanel .soMuch .count li {
+  display: inline-block;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 70px;
+}
+.container .subHead {
+  display: flex;
+  padding-bottom: 30px;
+}
+.body {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+}
+.body .leftColumn {
+  width: 100%;
+  margin-right: 15px;
+}
+.body .rightColumn {
+  width: 335px;
+}
+.recommend {
+  margin-left: 20px;
+  width: 100%;
+  font-size: 0;
+}
+.recommend li {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.recommend li a {
+  position: relative;
+  display: block;
+}
+.recommend li a h3 {
+  position: absolute;
+  bottom: 10px;
+  font-size: 30px;
+  color: #fff;
+  left: 10px;
+}
+.recommend li a img {
+  display: block;
+  width: 288px;
+  height: 161px;
+}
+.cateBanner {
+  width: 800px;
+  height: 288px;
+}
+.cateBanner .slick-prev {
+  left: 20px;
+  z-index: 10;
+}
+.cateBanner .slick-next {
+  right: 20px;
+  z-index: 10;
+}
+.cateBanner .slick-dots {
+  bottom: 10px;
+  text-align: right;
+}
+.cateBanner a {
+  display: flex;
+}
+.cateBanner a .cateText {
+  width: 260px;
+  height: 285px;
+  background: #334259;
+  line-height: 1.6;
+}
+.cateBanner a .cateText .cateTextInner {
+  border: 2px solid #4d5b70;
+  padding: 20px;
+  margin: 20px;
+  height: 244px;
+}
+.cateBanner a .cateText .cateTextInner h3 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  border-bottom: 1px solid #7d828d;
+  padding: 8px 0;
+  text-align: center;
+}
+.cateBanner a .cateText .cateTextInner p {
+  color: #7d828d;
+  font-size: 12px;
+  margin-top: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.cateBanner a .cateText .cateTextInner ul {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+.cateBanner a .cateText .cateTextInner ul li {
+  padding: 0 5px;
+  color: #7d828d;
+  font-size: 12px;
+}
+.cateBanner a img {
+  display: block;
+  width: 540px;
+  height: 285px;
+}
+.container .cateSubHead {
+  display: flex;
+  height: 288px;
+  padding-bottom: 30px;
+}
+.container .body {
+  display: flex;
+  padding-top: 70px;
+  width: 1200px;
+  margin: 0 auto;
+}
+.container .body .leftColumn {
+  width: 100%;
+  margin-right: 15px;
+}
+.container .body .rightColumn {
+  width: 335px;
+}
+.cateArticle {
+  margin-top: 20px;
+  background-color: #fff;
+}
+.cateArticle .cateArticleHead {
+  padding: 20px 20px 0;
+}
+.cateArticle .cateArticleHead div {
+  border-bottom: 2px solid #eee;
+}
+.cateArticle .cateArticleHead div span {
+  border-bottom: 2px solid #5079b7;
+  display: inline-block;
+  font-size: 18px;
+  padding-bottom: 8px;
+  margin-bottom: -2px;
+}
+.cateArticle .cateArticleList {
+  width: 100%;
+  margin-right: auto;
+  margin-left: 15px;
+}
+.cateArticle .cateArticleList .articleWrap {
+  padding: 20px;
+  display: flex;
+  background: #fff;
+  height: 200px;
+  border-bottom: 1px solid #eee;
+}
+.cateArticle .cateArticleList .articleWrap .articleImg {
+  background: grey;
+}
+.cateArticle .cateArticleList .articleWrap .articleImg img {
+  display: block;
+  width: 215px;
+  height: 140px;
+}
+.cateArticle .cateArticleList .articleWrap .articlePanel {
+  width: 100%;
+  margin-right: auto;
+  margin-left: 15px;
+}
+.cateArticle .cateArticleList .articleWrap .articlePanel .title {
+  padding-top: 20px;
+  font-size: 20px;
+}
+.cateArticle .cateArticleList .articleWrap .articlePanel p {
+  margin: 20px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.cateArticle .cateArticleList .articleWrap .articlePanel .soMuch {
+  display: flex;
+}
+.cateArticle .cateArticleList .articleWrap .articlePanel .soMuch .authorWrap {
+  display: flex;
+  align-items: center;
+}
+.cateArticle .cateArticleList .articleWrap .articlePanel .soMuch .authorWrap li {
+  margin-right: 15px;
+}
+.cateArticle .cateArticleList .articleWrap .articlePanel .soMuch .authorWrap li a img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50% ;
+}
+.cateArticle .cateArticleList .articleWrap .articlePanel .soMuch .count {
+  margin-left: auto;
+}
+.cateArticle .cateArticleList .articleWrap .articlePanel .soMuch .count li {
+  display: inline-block;
+}
+.det {
+  display: block;
+}
+.det .leftColumn .detTitle {
+  margin-bottom: 30px;
+}
+.det .leftColumn .detTitle .title {
+  font-size: 22px;
+  margin-top: 5px;
+  line-height: 1.4;
+  margin-bottom: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.det .leftColumn .detTitle .authorPan {
+  display: flex;
+  width: 100%;
+}
+.det .leftColumn .detTitle .authorPan li {
+  flex: 0 0 auto;
+  margin: 0 5px;
+}
+.det .leftColumn .detTitle .authorPan li a img {
+  border-radius: 100%;
+  max-width: 100%;
+  width: 42px;
+  height: 42px;
+  display: block;
+  border-style: none;
+}
+.det .leftColumn .detTitle .authorPan li p {
+  font-size: 14px;
+  padding: 5px 0;
+}
+.det .leftColumn .detTitle .authorPan li p:last-child {
+  color: #878e9a;
+  font-size: 12px;
+  padding-top: 2px;
+}
+.det .leftColumn .detTitle .authorPan .countPan {
+  display: flex;
+  margin-left: auto;
+  align-items: flex-end;
+}
+.det .leftColumn .detTitle .authorPan .countPan li {
+  color: #c9ccd0;
+  margin-left: 8px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.det .leftColumn .detAbstract blockquote {
+  background-color: #f2f5fb;
+  padding: 5px 20px;
+  margin-left: 0;
+  margin-right: 0;
+  color: #243342;
+  border-left: 5px solid #d0d6dc;
+  margin-bottom: 15px;
+}
+.det .leftColumn .detAbstract blockquote p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+  margin-top: 15px;
+}

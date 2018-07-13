@@ -37,10 +37,12 @@ app.use(bodyParser.json({limit: '50mb'}));
 
 
 app.get('*', function (req, res, next) {
+    debugger
     if(isDev){
         res.render('../app/assets/index.ejs');
     }else {
-        var serverRender = require('../dist/serverRender')
+        debugger
+        var serverRender = require('../dist/js-server/serverRender')
         serverRender.default(req, res)
     }
 

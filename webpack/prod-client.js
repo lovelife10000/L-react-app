@@ -3,63 +3,66 @@ const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
-// const package=require('../package')
+const package=require('../package')
 
 module.exports =    {
+
     mode: 'production',
         name: 'browser',
         devtool: 'hidden-source-map',
         context: path.join(__dirname, '..', 'app'),
         entry: {
-            vendor: ['react'],
+            vendor: Object.keys(package.dependencies),
             bundle: '../client/client.js'
         },
         output: {
             path: path.join(__dirname, '../dist'),
             filename: 'js/[hash:8].[name].js',
             publicPath: '/',
-            chunkFilename: 'js/[hash:8].[name].chunk.js',
+            chunkFilename: 'js/[hash:8].[name].js',
         },
 
         plugins: [
             new webpack.LoaderOptionsPlugin({ options: {} }),
-            // new webpack.DefinePlugin({
-            //     __DEVCLIENT__: false,
-            //     __DEVSERVER__: false,
-            //     __DEVTOOLS__: false,
-            //     __DEVLOGGER__: false,
-            //     'process.env': {
-            //         'NODE_ENV': JSON.stringify('production')
-            //     }
-            // }),
-            // new webpack.optimize.OccurrenceOrderPlugin(),
-            // new UglifyJSPlugin(),
+            new webpack.DefinePlugin({
+                __DEVCLIENT__: false,
+                __DEVSERVER__: false,
+                __DEVTOOLS__: false,
+                __DEVLOGGER__: false,
+                'process.env': {
+                    'NODE_ENV': JSON.stringify('production')
+                }
+            }),
+            new webpack.optimize.OccurrenceOrderPlugin(),
+            new UglifyJSPlugin(),
 
 
-            // new ExtractTextPlugin({
-            //     filename: '[hash:8].style.css',
-            //     disable: false, allChunks: true
-            // }),
-            // new HtmlWebpackPlugin({
-            //     favicon: path.join(__dirname, '../app/assets/images/favicon.ico'),
-            //     title: 'L-react-app',
-            //     template: path.join(__dirname, '../app/assets/index.html'),
-            //     filename: 'index.ejs',
-            //     inject: 'body',
-            //     htmlContent: '<%- __html__ %>',
-            //     initialData: 'window.__INITIAL_STATE__ = <%- __state__ %>',
-            //     styleMode: '<%- __styleMode__ %>',
-            //     baiduappkey: process.env.BAIDU_TONGJI_APPKEY,
-            //     hash: false,    //为静态资源生成hash值
-            //     minify: {    //压缩HTML文件
-            //         removeComments: false,    //移除HTML中的注释
-            //         collapseWhitespace: false    //删除空白符与换行符
-            //     }
-            // }),
+            new ExtractTextPlugin({
+                filename: '[hash:8].style.css',
+                disable: false, allChunks: true
+            }),
+            new HtmlWebpackPlugin({
+                favicon: path.join(__dirname, '../app/assets/images/favicon.ico'),
+                title: 'L-react-app',
+                template: path.join(__dirname, '../app/assets/index.html'),
+                filename: 'index.ejs',
+                inject: 'body',
+                htmlContent: '<%- __html__ %>',
+                initialData: 'window.__INITIAL_STATE__ = <%- __state__ %>',
+                styleMode: '<%- __styleMode__ %>',
+                baiduappkey: process.env.BAIDU_TONGJI_APPKEY,
+                hash: false,
+                minify: {
+                    removeComments: false,
+                    collapseWhitespace: false
+                },
+
+            }),
         ],
         module: {
             rules: [
-                {enforce: 'pre', test: /\.js$|\.jsx$/, exclude: /node_modules/, use: ['eslint-loader']},
+
+                // {enforce: 'pre', test: /\.js$|\.jsx$/, exclude: /node_modules/, use: ['eslint-loader']},
                 {
                     test: /\.js$|\.jsx$/,
                     loader: 'babel-loader',
@@ -91,12 +94,9 @@ module.exports =    {
 
                         }, {
                             loader: "less-loader",
-                            // options: {
-                            //     strictMath: true,
-                            //     noIeCompat: true
-                            // }
+
                             options: {
-                                javascriptEnabled: true//此设置能让在js中引入less文件，并进行打包
+                                javascriptEnabled: true
                             }
                         }]
 
@@ -154,7 +154,7 @@ module.exports =    {
                         }
                     }]
                 },
-                {test: /\.json$/, use: ['json-loader']},
+                {type: "javascript/auto",test: /\.json$/, use: ['json-loader']},
             ],
         },
         optimization: {
