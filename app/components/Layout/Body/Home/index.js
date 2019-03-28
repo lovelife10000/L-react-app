@@ -13,14 +13,14 @@ const mapStateToProps = (state) => {
   return {
     articleList: state.articleList.toJS()
   }
-};
+}
 
 
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators(Actions, dispatch)
   }
-};
+}
 
 
 

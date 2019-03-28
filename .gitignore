@@ -14,7 +14,7 @@ build.commond.md
 
 ##push server
 #/*
-#!/dist
+/dist
 #!server.js
 #!/logs
 #!package.json

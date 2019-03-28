@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import classnames from 'classnames';
-import styles from './index.less';
+import classnames from 'classnames'
+import styles from './index.less'
 import Nav from 'components/Common/Nav'
 import logo from 'images/logo.png'
 import SearchBar from 'components/Common/SearchBar'
@@ -14,7 +14,7 @@ class Header extends Component {
   render() {
     const cls = classnames({
       [styles.header]: true
-    });
+    })
     return (
 
       <div className={cls}>

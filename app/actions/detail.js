@@ -4,10 +4,10 @@ import * as api from 'api'
 
 export const getDetail = () => {
   
-  console.log(api);
+  console.log(api)
   
   try{
-    console.log(api.getDetail);
+    console.log(api.getDetail)
   }catch (e) {
     throw(e)
 

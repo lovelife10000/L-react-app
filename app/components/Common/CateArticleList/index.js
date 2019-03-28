@@ -16,14 +16,14 @@ const mapStateToProps = (state) => {
   return {
     cateArticleList: state.cateArticleList.toJS()
   }
-};
+}
 
 
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators(Actions, dispatch)
   }
-};
+}
 
 class CateArticleList extends Component {
   constructor(props) {
@@ -43,8 +43,8 @@ class CateArticleList extends Component {
   }
 
   getCateArticleList() {
-    const { actions } = this.props;
-    actions.getCateArticleList();
+    const { actions } = this.props
+    actions.getCateArticleList()
 
 
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Input } from 'antd';
-const Search = Input.Search;
+import { Input } from 'antd'
+const Search = Input.Search
 // import styles from './index.less';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -11,14 +11,14 @@ const mapStateToProps = (state) => {
   return {
     categories: state.categories.toJS()
   }
-};
+}
 
 
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators(Actions, dispatch)
   }
-};
+}
 
 class SearchBar extends Component {
   constructor(props) {

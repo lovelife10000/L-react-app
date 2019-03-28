@@ -1,7 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="efe5cc44-5fbe-4cc8-a73b-af28daae2331" name="Default Changelist" comment="" />
+    <list default="true" id="efe5cc44-5fbe-4cc8-a73b-af28daae2331" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/actions/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/actions/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/category.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/actions/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/comment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/actions/detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/actions/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/actions/other.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/other.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/category.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/doc.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/doc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/404/NotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/404/NotFound.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Common/ArticleList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Common/ArticleList/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Common/Banner/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Common/Banner/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Common/CateArticleList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Common/CateArticleList/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Common/CateBanner/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Common/CateBanner/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Common/CateHotArticle/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Common/CateHotArticle/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Common/GoTop/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Common/GoTop/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Common/HotArticle/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Common/HotArticle/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Common/HotTag/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Common/HotTag/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Common/Link/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Common/Link/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Common/Login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Common/Login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Common/Nav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Common/Nav/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Common/Recommend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Common/Recommend/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Common/Register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Common/Register/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Common/SearchBar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Common/SearchBar/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Layout/Body/Category/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Layout/Body/Category/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Layout/Body/Detail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Layout/Body/Detail/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Layout/Body/Home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Layout/Body/Home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Layout/Footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Layout/Footer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Layout/Header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Layout/Header/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Layout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Layout/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Tools/DevTools.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Tools/DevTools.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/app.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/app.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/loadable.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/loadable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/routes-sync.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routes-sync.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/routes.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routes.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/reducers/apps.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/reducers/apps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/reducers/article.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/reducers/article.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/reducers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/reducers/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/reducers/bannerData.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/reducers/bannerData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/reducers/cateArticle.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/reducers/cateArticle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/reducers/cateBannerData.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/reducers/cateBannerData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/reducers/categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/reducers/categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/reducers/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/reducers/comment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/reducers/detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/reducers/detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/reducers/globalVal.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/reducers/globalVal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/reducers/options.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/reducers/options.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/reducers/partners.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/reducers/partners.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/reducers/recommendData.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/reducers/recommendData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/reducers/showmsg.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/reducers/showmsg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/reducers/sns.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/reducers/sns.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/reducers/tagList.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/reducers/tagList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/store/configureStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/store/configureStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/store/promiseMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/store/promiseMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/authService.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/authService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,16 +83,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gitignore" value="1" />
+          <entry key="gitignore" value="2" />
           <entry key="js" value="3" />
-          <entry key="json" value="2" />
+          <entry key="json" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="2" />
+          <entry key="JSON" value="3" />
           <entry key="JavaScript" value="3" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -42,18 +103,37 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="gitignore" value="9" />
+          <entry key="gitignore" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="PLAIN_TEXT" value="16" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="12" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -76,6 +156,9 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
@@ -140,15 +223,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553765248922</updated>
-      <workItem from="1553765250187" duration="1056000" />
+      <workItem from="1553765250187" duration="1333000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1056000" />
+    <option name="totallyTimeSpent" value="1333000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
@@ -192,20 +276,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="146" column="39" selection-start-line="146" selection-start-column="39" selection-end-line="146" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webpack/dev-client.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -215,6 +285,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nodemon.json">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="15" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

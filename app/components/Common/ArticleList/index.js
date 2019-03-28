@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 // import {findDomNode} from 'react-dom'
 import styles from './index.less'
 import PropTypes from 'prop-types'
-import { Tabs } from 'antd';
+import { Tabs } from 'antd'
 // import z from 'images/avatar.png'
 
 
@@ -10,20 +10,20 @@ import { connect } from 'react-redux'
 import * as Actions from 'actions'
 import { bindActionCreators } from 'redux'
 
-const TabPane = Tabs.TabPane;
+const TabPane = Tabs.TabPane
 
 const mapStateToProps = (state) => {
   return {
     articleList: state.articleList.toJS()
   }
-};
+}
 
 
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators(Actions, dispatch)
   }
-};
+}
 
 class ArticleList extends Component {
   constructor(props) {
@@ -42,14 +42,14 @@ class ArticleList extends Component {
   }
 
   getArticleList() {
-    const { actions } = this.props;
-    actions.getArticleList();
+    const { actions } = this.props
+    actions.getArticleList()
 
 
   }
   addArticleList() {
     const { actions } = this.props
-    actions.addArticleList(10);
+    actions.addArticleList(10)
   }
 
 
@@ -68,7 +68,7 @@ class ArticleList extends Component {
   // }
 
   callback(key) {
-    console.log(key);
+    console.log(key)
   }
 
   render() {

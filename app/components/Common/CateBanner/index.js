@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Slider from 'react-slick';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as Actions from 'actions';
+import Slider from 'react-slick'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import * as Actions from 'actions'
 import styles from './index.less'
 import PropTypes from 'prop-types'
 
@@ -28,19 +28,19 @@ class CateBanner extends Component {
 
   componentDidMount() {
 
-    this.getCateBannerData();
+    this.getCateBannerData()
 
   }
 
   getCateBannerData() {
-    const { actions } = this.props;
+    const { actions } = this.props
 
-    actions.getCateBannerData();
+    actions.getCateBannerData()
   }
 
   render() {
 
-    const { cateBannerData } = this.props;
+    const { cateBannerData } = this.props
     const settings = {
       dots: true,
       infinite: true,

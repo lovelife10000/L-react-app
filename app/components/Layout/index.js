@@ -32,10 +32,10 @@ class Layout extends Component {
     actions: PropTypes.object.isRequired,
   };
 
-    static fetchData({token}){
-        //return [Actions.getUserInfo(token),Actions.getIndexImage()]
-        return []
-    }
+  static fetchData({token}){
+    //return [Actions.getUserInfo(token),Actions.getIndexImage()]
+    return []
+  }
 
 
   static propTypes = {

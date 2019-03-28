@@ -8,5 +8,5 @@ export const getCategories = () => {
     type: types.getCategories,
     promise: api.getCategories()
   }
-};
+}
 

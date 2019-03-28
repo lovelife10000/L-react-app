@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Dropdown, Icon, Menu } from 'antd';
-import styles from './index.less';
+import { Dropdown, Icon, Menu } from 'antd'
+import styles from './index.less'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as Actions from 'actions'
@@ -10,14 +10,14 @@ const mapStateToProps = (state) => {
   return {
     categories: state.categories.toJS()
   }
-};
+}
 
 
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators(Actions, dispatch)
   }
-};
+}
 
 class Nav extends Component {
   constructor(props) {
@@ -57,7 +57,7 @@ class Nav extends Component {
   render() {
 
 
-    const { categories } = this.props;
+    const { categories } = this.props
 
     return (
 
