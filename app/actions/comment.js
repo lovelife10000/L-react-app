@@ -1,6 +1,6 @@
-import * as types from './types'
-import * as api from 'api'
-import { showMsg } from './other'
+import * as types from "./types"
+import * as api from "api"
+import { showMsg } from "./other"
 
 //获取评论
 export const getCommentList = (id)=>{
@@ -22,13 +22,13 @@ export function addComment(comment) {
     return api.addNewComment(comment)
       .then(response => ({json: response.data, status: response.statusText}))
       .then(({json,status}) => {
-        if(status !== 'OK'){
-          return dispatch(showMsg(json.data.error_msg || '添加评论失败'))
+        if(status !== "OK"){
+          return dispatch(showMsg(json.data.error_msg || "添加评论失败"))
         }
-        dispatch(showMsg('添加评论成功','success'))
+        dispatch(showMsg("添加评论成功","success"))
         return dispatch(receiveAddComment(json.data))
       }).catch(err =>{
-        return dispatch(showMsg(err.response.data.error_msg || '添加评论失败'))
+        return dispatch(showMsg(err.response.data.error_msg || "添加评论失败"))
       })
   }
 }
@@ -47,13 +47,13 @@ export function addReply(cid,reply) {
     return api.addNewReply(cid,reply)
       .then(response => ({json: response.data, status: response.statusText}))
       .then(({json,status}) => {
-        if(status !== 'OK'){
-          return dispatch(showMsg(json.data.error_msg || '添加回复失败'))
+        if(status !== "OK"){
+          return dispatch(showMsg(json.data.error_msg || "添加回复失败"))
         }
-        dispatch(showMsg('添加回复成功','success'))
+        dispatch(showMsg("添加回复成功","success"))
         return dispatch(receiveAddReply(cid,json.data))
       }).catch(err =>{
-        return dispatch(showMsg(err.response.data.error_msg || '添加回复失败'))
+        return dispatch(showMsg(err.response.data.error_msg || "添加回复失败"))
       })
   }
 }

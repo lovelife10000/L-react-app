@@ -1,10 +1,10 @@
-import  types from 'actions/types'
-import * as api from 'api'
+import  types from "actions/types"
+import * as api from "api"
 
 //改变样式风格.
 export const changeStyleMode = () => ({ type: types.CHANGE_STYLE_MODE })
 //显示提示消息
-export const showMsg = (content,type='error')=>{
+export const showMsg = (content,type="error")=>{
   return {
     type: types.SHOW_MSG,
     message: { content:content,type:type }
@@ -23,7 +23,7 @@ export const getApps = () =>{
 
 export const getBannerData=()=>{
   return{
-    type:'GET_BANNER_DATA',
+    type:"GET_BANNER_DATA",
     promise:api.getBannerData()
   }
 }

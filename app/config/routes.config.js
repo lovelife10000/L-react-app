@@ -1,26 +1,26 @@
-import * as loadable from './loadable'
+import * as loadable from "./loadable"
 
 const routes = [
   {
     component: loadable.LoadableLayout,
     routes: [
       {
-        path: '/',
+        path: "/",
         exact: true,
         component: loadable.LoadableHome
       },
       {
-        path: '/category',
+        path: "/category",
         exact: true,
         component: loadable.LoadableCategory
       },
       {
-        path: '/detail',
+        path: "/detail",
         exact: true,
         component: loadable.LoadableDetail
       },
       {
-        path: '*',
+        path: "*",
         component: loadable.LoadableNotFound
       }
     ]

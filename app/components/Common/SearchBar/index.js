@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-import { Input } from 'antd'
+import React, { Component } from "react"
+import { Input } from "antd"
 const Search = Input.Search
 // import styles from './index.less';
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-import * as Actions from 'actions'
-import PropTypes from 'prop-types'
+import { bindActionCreators } from "redux"
+import { connect } from "react-redux"
+import * as Actions from "actions"
+import PropTypes from "prop-types"
 
 const mapStateToProps = (state) => {
   return {

@@ -1,2 +1,2 @@
-export * from './doc'
-export * from './category'
+export * from "./doc"
+export * from "./category"

@@ -1,6 +1,6 @@
-import types from 'actions/types'
-import { createReducer } from 'redux-immutablejs'
-import { fromJS } from 'immutable'
+import types from "actions/types"
+import { createReducer } from "redux-immutablejs"
+import { fromJS } from "immutable"
 // import { API_ROOT } from '../config/app.config'
 
 export default createReducer(fromJS({

@@ -1,8 +1,8 @@
-import Cookies from 'universal-cookie'
+import Cookies from "universal-cookie"
 const cookie = new Cookies()
-import { CookieDomain } from '../config/app.config'
+import { CookieDomain } from "../config/app.config"
 let cookieConfig = {}
-if(CookieDomain !== ''){
+if(CookieDomain !== ""){
   cookieConfig = { domain: CookieDomain }
 }
 
@@ -19,9 +19,9 @@ export function removeCookie(name) {
 }
 
 export function signOut() {
-  cookie.remove('token', cookieConfig)
+  cookie.remove("token", cookieConfig)
 }
 
 export function isLogin() {
-  return !!cookie.get('token')
+  return !!cookie.get("token")
 }

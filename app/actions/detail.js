@@ -1,5 +1,5 @@
-import types from 'actions/types'
-import * as api from 'api'
+import types from "actions/types"
+import * as api from "api"
 
 
 export const getDetail = () => {

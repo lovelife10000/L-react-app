@@ -1,10 +1,10 @@
-import React, {Component} from 'react'
-import classnames from 'classnames'
-import styles from './index.less'
-import Nav from 'components/Common/Nav'
-import logo from 'images/logo.png'
-import SearchBar from 'components/Common/SearchBar'
-import {Button} from 'antd'
+import React, {Component} from "react"
+import classnames from "classnames"
+import styles from "./index.less"
+import Nav from "components/Common/Nav"
+import logo from "images/logo.png"
+import SearchBar from "components/Common/SearchBar"
+import {Button} from "antd"
 
 class Header extends Component {
   constructor() {
@@ -28,8 +28,8 @@ class Header extends Component {
           <div className={styles.searchSession}>
             <SearchBar/>
 
-            <Button type="primary" style={{margin:'0 6px'}}>注册</Button>
-            <Button type="primary" style={{margin:'0 6px'}}>登录</Button>
+            <Button type="primary" style={{margin:"0 6px"}}>注册</Button>
+            <Button type="primary" style={{margin:"0 6px"}}>登录</Button>
           </div>
 
 

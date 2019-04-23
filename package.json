@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm-run-all --parallel eslint-fix better-dev",
-    "eslint-fix": "eslint --fix app",
+    "eslint-fix": "eslint --fix app client",
     "better-dev": "better-npm-run nodemon-dev",
     "build": "npm-run-all clean --parallel build-client:prod build-server:prod",
     "clean": "rimraf dist",
@@ -55,6 +55,11 @@
     }
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "history": "^4.7.2",
+    "immutable": "3.8.1",
+    "pm2": "^3.5.0",
+    "prop-types": "15.5.10",
     "react": "15.6.1",
     "react-dom": "15.6.1",
     "react-redux": "5.0.6",
@@ -64,11 +69,7 @@
     "react-router-redux": "^5.0.0-alpha.6",
     "redux": "3.7.2",
     "redux-immutablejs": "0.0.8",
-    "redux-thunk": "2.2.0",
-    "axios": "^0.18.0",
-    "history": "^4.7.2",
-    "immutable": "3.8.1",
-    "prop-types": "15.5.10"
+    "redux-thunk": "2.2.0"
   },
   "devDependencies": {
     "antd": "^3.4.3",
@@ -142,7 +143,7 @@
     "uglifyjs-webpack-plugin": "^1.2.5",
     "universal-cookie": "^2.1.0",
     "url-loader": "^1.0.1",
-    "webpack": "^4.12.0",
+    "webpack": "^4.16.0",
     "webpack-cli": "^3.0.8",
     "webpack-dev-middleware": "1.12.0",
     "webpack-hot-middleware": "2.19.1",

@@ -177,7 +177,7 @@ module.exports =    {
             }
         },
         resolve: {
-            extensions: ['.js','.jsx','.sass','.css','.png'],
+            extensions: ['.js', '.json','.jsx','.sass','.css','.png'],
             alias: {
                 images: path.resolve(__dirname, '../app/assets/images'),
                 actions: path.resolve(__dirname, '../app/actions'),

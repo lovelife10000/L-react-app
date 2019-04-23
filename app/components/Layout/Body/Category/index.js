@@ -1,10 +1,10 @@
 import React, {
   Component
-} from 'react'
-import CateBanner from '../../../Common/CateBanner'
+} from "react"
+import CateBanner from "../../../Common/CateBanner"
 
-import styles from './index.less'
-import CateArticleList from '../../../Common/CateArticleList'
+import styles from "./index.less"
+import CateArticleList from "../../../Common/CateArticleList"
 
 
 class Category extends Component {

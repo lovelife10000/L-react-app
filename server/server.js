@@ -1,6 +1,5 @@
 var path = require('path')
 var express = require('express')
-
 var favicon = require('serve-favicon')
 const bodyParser = require('body-parser');
 const appConfig=require('../app/config/app.config');

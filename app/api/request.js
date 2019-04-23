@@ -1,8 +1,8 @@
-require('es6-promise').polyfill()
-import axios from 'axios'
-import {devDomain, prodDomain} from 'config/app.config'
-import {getCookie, signOut} from 'utils/authService'
-const isDev = process.env.NODE_ENV === 'development'
+require("es6-promise").polyfill()
+import axios from "axios"
+import {devDomain, prodDomain} from "config/app.config"
+import {getCookie, signOut} from "utils/authService"
+const isDev = process.env.NODE_ENV === "development"
 axios.defaults.baseURL = isDev ? devDomain : prodDomain
 axios.defaults.withCredentials = true
 
@@ -10,8 +10,8 @@ axios.defaults.withCredentials = true
 axios.interceptors.request.use(function (config) {
 
   config.headers = config.headers || {}
-  if (getCookie('token')) {
-    config.headers.Authorization = 'Bearer ' + getCookie('token').replace(/(^\")|(\"$)/g, '')
+  if (getCookie("token")) {
+    config.headers.Authorization = "Bearer " + getCookie("token").replace(/(^\")|(\"$)/g, "")
   }
   return config
 }, function (error) {
@@ -23,7 +23,7 @@ axios.interceptors.request.use(function (config) {
 axios.interceptors.response.use(function (response) {
   if (response.status === 401) {
     signOut()
-    window.location.pathname = '/login'
+    window.location.pathname = "/login"
   }
   return response
 }, function (error) {

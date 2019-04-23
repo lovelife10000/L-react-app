@@ -1,8 +1,8 @@
 
-import types from 'actions/types'
-import { createReducer } from 'redux-immutablejs'
+import types from "actions/types"
+import { createReducer } from "redux-immutablejs"
 
-import {List} from 'immutable'
+import {List} from "immutable"
 
 
 

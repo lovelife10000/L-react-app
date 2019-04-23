@@ -1,6 +1,6 @@
-import types from 'actions/types'
-import { createReducer } from 'redux-immutablejs'
-import {List} from 'immutable'
+import types from "actions/types"
+import { createReducer } from "redux-immutablejs"
+import {List} from "immutable"
 
 export default  createReducer(List(),{
   [types.getCateArticleListRequest]: (state,{json})=>state,

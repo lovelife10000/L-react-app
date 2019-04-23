@@ -1,9 +1,9 @@
-import * as types from './types'
-import { push } from 'react-router-redux'
-import { saveCookie,getCookie,signOut } from '../utils/authService'
-import { showMsg } from './other'
-import * as api from 'api'
-import { API_ROOT } from '../config/app.config'
+import * as types from "./types"
+import { push } from "react-router-redux"
+import { saveCookie,getCookie,signOut } from "../utils/authService"
+import { showMsg } from "./other"
+import * as api from "api"
+import { API_ROOT } from "../config/app.config"
 
 //获取snslogins
 export const getSnsLogins = ()=>{
@@ -16,7 +16,7 @@ export const getSnsLogins = ()=>{
 export const getCaptchaUrl = () =>{
   return {
     type: types.GET_CAPTCHAURL,
-    captchaUrl: API_ROOT + 'users/getCaptcha?' + Math.random()
+    captchaUrl: API_ROOT + "users/getCaptcha?" + Math.random()
   }
 }
 //登录
@@ -32,21 +32,21 @@ export function localLogin(userInfo) {
     return api.localLogin(userInfo)
       .then(response => ({json: response.data, status: response.statusText}))
       .then(({json,status}) => {
-        if(status !== 'OK'){
+        if(status !== "OK"){
           dispatch(getCaptchaUrl())
-          return dispatch(showMsg(json.data.error_msg || '登录失败'))
+          return dispatch(showMsg(json.data.error_msg || "登录失败"))
         }
         //得到token,并存储
-        saveCookie('token',json.token)
+        saveCookie("token",json.token)
         //获取用户信息
         dispatch(getUserInfo(json.token))
         dispatch(loginSuccess(json.token))
         dispatch(getCaptchaUrl())
-        dispatch(showMsg('登录成功,欢迎光临!','success'))
-        dispatch(push('/'))
+        dispatch(showMsg("登录成功,欢迎光临!","success"))
+        dispatch(push("/"))
         window.location.reload()
       }).catch(err => {
-        const error_msg = err.response?(err.response.data && err.response.data.error_msg)?err.response.data.error_msg:'登录失败':'登录失败'
+        const error_msg = err.response?(err.response.data && err.response.data.error_msg)?err.response.data.error_msg:"登录失败":"登录失败"
         //登录异常
         dispatch(getCaptchaUrl())
         return dispatch(showMsg(error_msg))
@@ -55,12 +55,12 @@ export function localLogin(userInfo) {
 }
 
 //获取用户信息
-export const getUserInfo = (token = getCookie('token'))=>{
+export const getUserInfo = (token = getCookie("token"))=>{
   return {
     type: types.GET_USERINFO,
     promise: api.getMe({
       headers: {
-        'Authorization': `Bearer ${token}`
+        "Authorization": `Bearer ${token}`
       }
     })
   }
@@ -71,7 +71,7 @@ export function logout() {
   return dispatch => {
     signOut()
     dispatch({type: types.LOGOUT_USER})
-    window.location.pathname = '/'
+    window.location.pathname = "/"
   }
 }
 //修改用户资料
@@ -86,14 +86,14 @@ export function updateUser(userInfo) {
     return api.mdUser(userInfo)
       .then(response => ({json: response.data, status: response.statusText}))
       .then(({json,status}) => {
-        if(status !== 'OK'){
-          return dispatch(showMsg(json.data && json.data.error_msg || '更新用户资料失败'))
+        if(status !== "OK"){
+          return dispatch(showMsg(json.data && json.data.error_msg || "更新用户资料失败"))
         }
-        dispatch(showMsg('更新用户资料成功','success'))
+        dispatch(showMsg("更新用户资料成功","success"))
         return dispatch(successUpdateUser(json.data))
 
       }).catch(err=>{
-        return dispatch(showMsg(err.response.data.error_msg || '更新用户资料失败'))
+        return dispatch(showMsg(err.response.data.error_msg || "更新用户资料失败"))
       })
   }
 }

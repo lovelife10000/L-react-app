@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import { renderRoutes } from 'react-router-config'
-import PropTypes from 'prop-types'
-import * as Actions from '../../actions'
+import React, { Component } from "react"
+import { renderRoutes } from "react-router-config"
+import PropTypes from "prop-types"
+import * as Actions from "../../actions"
 
-import Footer from './Footer'
-import Header from './Header'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import Footer from "./Footer"
+import Header from "./Header"
+import { bindActionCreators } from "redux"
+import { connect } from "react-redux"
 
 
 const mapStateToProps = state => {

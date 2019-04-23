@@ -1,12 +1,12 @@
-import { createStore,compose,applyMiddleware } from 'redux'
-import thunkMiddleware from 'redux-thunk'
-import { routerMiddleware } from 'react-router-redux'
-import {persistState} from 'redux-devtools'
-import {createLogger} from 'redux-logger'
-import {Iterable} from 'immutable'
-import promiseMiddleware from './promiseMiddleware'
-import DevTools from '../components/Tools/DevTools'
-import rootReducer from '../reducers'
+import { createStore,compose,applyMiddleware } from "redux"
+import thunkMiddleware from "redux-thunk"
+import { routerMiddleware } from "react-router-redux"
+import {persistState} from "redux-devtools"
+import {createLogger} from "redux-logger"
+import {Iterable} from "immutable"
+import promiseMiddleware from "./promiseMiddleware"
+import DevTools from "../components/Tools/DevTools"
+import rootReducer from "../reducers"
 
 export default function configureStore(initialState, history) {
   const stateTransformer = (state) => {
@@ -38,8 +38,8 @@ export default function configureStore(initialState, history) {
   const store = finalCreateStore(createStore)(rootReducer, initialState)
 
   if (module.hot) {
-    module.hot.accept('../reducers', () => {
-      const nextReducer = require('../reducers')
+    module.hot.accept("../reducers", () => {
+      const nextReducer = require("../reducers")
       store.replaceReducer(nextReducer)
     })
   }

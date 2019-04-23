@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-import * as Actions from 'actions'
-import styles from './index.less'
-import PropTypes from 'prop-types'
+import { bindActionCreators } from "redux"
+import { connect } from "react-redux"
+import * as Actions from "actions"
+import styles from "./index.less"
+import PropTypes from "prop-types"
 
 const mapStateToProps = (state) => {
   return {

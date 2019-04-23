@@ -1,12 +1,12 @@
-import React, {Component} from 'react'
-import Banner from '../../../Common/Banner'
-import ArticleList from '../../../Common/ArticleList/index'
-import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
-import * as Actions from 'actions'
-import {bindActionCreators} from 'redux'
-import styles from './index.less'
-import Recommend from '../../../Common/Recommend'
+import React, {Component} from "react"
+import Banner from "../../../Common/Banner"
+import ArticleList from "../../../Common/ArticleList/index"
+import PropTypes from "prop-types"
+import {connect} from "react-redux"
+import * as Actions from "actions"
+import {bindActionCreators} from "redux"
+import styles from "./index.less"
+import Recommend from "../../../Common/Recommend"
 
 
 const mapStateToProps = (state) => {

@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import * as Actions from 'actions'
-import styles from './index.less'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import React, { Component } from "react"
+import PropTypes from "prop-types"
+import * as Actions from "actions"
+import styles from "./index.less"
+import { bindActionCreators } from "redux"
+import { connect } from "react-redux"
 
 
 const mapStateToProps = state => {
@@ -48,7 +48,7 @@ class Detail extends Component {
   render() {
     const { detail } = this.props
     return (
-      <div className={styles.det + ' container'}>
+      <div className={styles.det + " container"}>
 
         <div className={styles.leftColumn}>
           <div className={styles.detTitle}>

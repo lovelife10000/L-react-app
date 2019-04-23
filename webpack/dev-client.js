@@ -5,6 +5,7 @@ const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&t
 
 
 module.exports = {
+    mode: "development",
     devtool: 'cheap-module-source-map',
     name: 'browser',
     context: path.join(__dirname, '..', 'app'),
@@ -25,10 +26,18 @@ module.exports = {
                 'NODE_ENV': JSON.stringify('development')
             }
         }),
-        new webpack.LoaderOptionsPlugin({
-            debug: true
-        }),
-
+        // new webpack.LoaderOptionsPlugin({
+        //     debug: true
+        // }),
+        new webpack.LoaderOptionsPlugin(//解决'eslint' of undefined
+            {
+                minimize: true,
+                debug: false,
+                options: {
+                    context: __dirname
+                }
+            }
+        ),
 
         new webpack.NoEmitOnErrorsPlugin(),
         new ExtractTextPlugin({
@@ -39,7 +48,12 @@ module.exports = {
     ],
     module: {
         rules: [
-            // { enforce: 'pre', test: /\.js$|\.jsx$/, exclude: /node_modules/, use: ['eslint-loader'] },
+            {
+                enforce: 'pre',
+                test: /\.js$|\.jsx$/,
+                exclude: /node_modules/,
+                use: ['eslint-loader']
+            },
             {
                 test: /\.js$|\.jsx$/,
                 loader: 'babel-loader',
@@ -137,11 +151,14 @@ module.exports = {
                     }
                 }]
             },
-            {test: /\.json$/, use: ['json-loader']},
+            // {
+            //     test: /\.json$/,
+            //     use: ['json-loader']
+            // },
         ],
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.sass', '.css', '.png'],
+        extensions: ['.js', '.json', '.jsx', '.sass', '.css', '.png'],
         alias: {
             images: path.resolve(__dirname, '../app/assets/images'),
             actions: path.resolve(__dirname, '../app/actions'),

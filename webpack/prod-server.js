@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
+    mode:"production",
     devtool: 'eval-source-map',
     name: '服务端渲染',
     context: path.join(__dirname, '../'),
@@ -144,7 +145,7 @@ module.exports = {
         // }
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.sass', '.css', '.png'],
+        extensions: ['.js', '.json',  '.sass', '.css', '.png'],
         alias: {
             images: path.resolve(__dirname, '../app/assets/images'),
             actions: path.resolve(__dirname, '../app/actions'),

@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 // import {findDomNode} from 'react-dom'
-import styles from './index.less'
-import PropTypes from 'prop-types'
+import styles from "./index.less"
+import PropTypes from "prop-types"
 
 // import z from 'images/avatar.png'
 
 
-import { connect } from 'react-redux'
-import * as Actions from 'actions'
-import { bindActionCreators } from 'redux'
+import { connect } from "react-redux"
+import * as Actions from "actions"
+import { bindActionCreators } from "redux"
 
 
 
